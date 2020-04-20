@@ -11,7 +11,7 @@ import java.util.Currency;
 import javax.swing.ImageIcon;
 
 public final class Sistema implements Serializable {
-    //sadasda
+    //sadasda.
     private ArrayList<Usuario> listaUsuarios;
     private ArrayList<Profesional> listaProfesionales;
     private ArrayList<Alimento> listaAlimentos;
