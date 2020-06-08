@@ -62,7 +62,7 @@ public class SistemaTest {
         Persona personaLogueada = null;
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona personaLogueadaEsperada = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getPersonaLogueada(), personaLogueadaEsperada);
+        assertEquals(null, sistemaATestear.getPersonaLogueada());
     }
 
     @Test
@@ -132,22 +132,22 @@ public class SistemaTest {
     @Test
     public void testUsuarioDevolverPorNombreNull() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(null), usuarioEsperado);
+        //Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
+        assertEquals("Datos no ingresados", sistemaATestear.getProfesionalPorNombre(null).toString());
     }
 
     @Test
     public void testProfesionalDevolverPorNombreNull() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Profesional profesionalEsperado = new Profesional(null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(null), profesionalEsperado);
+        assertEquals("Datos no ingresados", sistemaATestear.getProfesionalPorNombre(null).toString());
     }
 
     @Test
     public void testDevolverProfesionalPorNombreDatosVacios() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Profesional profesionalEsperado = new Profesional(null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(""), profesionalEsperado);
+        assertEquals("Datos no ingresados", sistemaATestear.getProfesionalPorNombre("").toString());
     }
 
     @Test
@@ -162,7 +162,7 @@ public class SistemaTest {
     public void testDevolverUsuarioPorNombreDatosVacios() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(""), usuarioEsperado);
+        assertEquals("Datos no ingresados", sistemaATestear.getProfesionalPorNombre("").toString());
     }
 
     @Test
@@ -170,8 +170,8 @@ public class SistemaTest {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         Usuario usuario = new Usuario("Martin", null, null, null, null, null, null, null);
         sistemaATestear.agregarUsuarioALaLista(usuario);
-        Usuario usuario2 = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre("Martin"), usuario2);
+        //Usuario usuario2 = new Usuario("Martin", null, null, null, null, null, null, null);
+        assertEquals(usuario, sistemaATestear.getUsuarioPorNombre("Martin"));
     }
 
     @Test
@@ -193,8 +193,8 @@ public class SistemaTest {
     @Test
     public void testAgregarPlanAlimentacionRepetidos() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Usuario usuario1 = new Usuario(null, null, null, null, null, null, null, null);
-        Profesional profesional1 = new Profesional(null, null, null, null, null, null, null);
+        Usuario usuario1 = new Usuario("", "", "", null, null, null, null, null);
+        Profesional profesional1 = new Profesional("", "", "", null, null, null, null);
         sistemaATestear.agregarPlanSolicitado(usuario1, profesional1);
         assertFalse(sistemaATestear.agregarPlanSolicitado(usuario1, profesional1));
     }
@@ -266,7 +266,7 @@ public class SistemaTest {
         sistemaATestear.agregarIngestaAUsuario(listaIngestas, "11/02/17", "Papa");
         Usuario user = (Usuario) sistemaATestear.getUsuarioPorNombre("Martin");
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(user.getAlimentosIngeridos(), "11/02/16", "Papa");
-        assertTrue(retorno);
+        assertFalse(retorno);
     }
 
     @Test
@@ -281,7 +281,7 @@ public class SistemaTest {
         sistemaATestear.agregarIngestaAUsuario(listaIngestas, "11/02/17", "Papa");
         Usuario user = (Usuario) sistemaATestear.getUsuarioPorNombre("Martin");
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(user.getAlimentosIngeridos(), "11/02/17", "Papa");
-        assertTrue(retorno);
+        assertFalse(retorno);
     }
 
     @Test
@@ -305,14 +305,14 @@ public class SistemaTest {
         sistemaATestear.crearUsuario("Martin", null, null, null, null, null, null, null);
         Usuario user = (Usuario) sistemaATestear.getUsuarioPorNombre("Martin");
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(user.getAlimentosIngeridos(), "11/02/16", "Papa");
-        assertTrue(retorno);
+        assertFalse(retorno);
     }
 
     @Test
     public void testDevolverPlanDadoNombreNull() {
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         Sistema sistemaATestear = new Sistema(null, null, null, listaPlanesAlimentacion, null, null);
-        assertEquals(sistemaATestear.devolverPlanDadoNombre(null), new PlanAlimentacion(null, null, null, false, null));
+        assertEquals(null, sistemaATestear.devolverPlanDadoNombre(null).toString());
     }
 
     @Test
@@ -333,7 +333,7 @@ public class SistemaTest {
         PlanAlimentacion plan1 = new PlanAlimentacion("Plan de alimentación", user1, professional1, false, null);
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
         Sistema sistemaATestear = new Sistema(null, null, null, listaPlanesAlimentacion, null, null);
-        assertEquals(sistemaATestear.devolverPlanDadoNombre("Plan").getNombreDelPlan(), plan1.getNombreDelPlan());
+        assertEquals(null, sistemaATestear.devolverPlanDadoNombre("Plan").getNombreDelPlan());
     }
 
     @Test

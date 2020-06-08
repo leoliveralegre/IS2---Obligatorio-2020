@@ -48,7 +48,17 @@ public final class InformacionMensaje implements Serializable {
 
     @Override
     public String toString() {
-        return getRemitente() + ": \n" + getMensaje();
+        String lvRemitente = ""; 
+        String lvMensaje = "";
+        lvRemitente = this.getRemitente();
+        lvMensaje = this.getMensaje();
+        if (this.getRemitente().equals("")) {
+            lvRemitente = "No hay remitente";
+        }
+        if (this.getMensaje().equals("")) {
+            lvMensaje = "No hay mensaje";
+        }        
+        return lvRemitente + ": \n" + lvMensaje;
     }
 
 }

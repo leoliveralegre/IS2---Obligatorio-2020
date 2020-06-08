@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import java.util.Currency;
 import javax.swing.ImageIcon;
@@ -365,7 +366,7 @@ public final class Sistema implements Serializable {
 
     public boolean agregarIngestaAUsuario(ArrayList<Ingesta> listaIngestasDelUsuario, String fechaIngesta, String nuevoAlimento) {
         boolean ingestaAgregada = false;
-        if (listaIngestasDelUsuario != null) {
+        if (listaIngestasDelUsuario != null && listaIngestasDelUsuario.size() > 0) {
             
                 if (yaExisteIngestaEnEsaFecha(listaIngestasDelUsuario, fechaIngesta)) {
                     for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {
@@ -390,7 +391,7 @@ public final class Sistema implements Serializable {
 
     private boolean yaExisteIngestaEnEsaFecha(ArrayList<Ingesta> listaIngestasDelUsuario, String fechaIngesta) {
         boolean existe = false;
-        if (listaIngestasDelUsuario != null) {
+        if (listaIngestasDelUsuario != null && fechaIngesta != null) {
             for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {
                 if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
                     existe = true;

@@ -13,7 +13,8 @@ public class AlimentoTest {
     @Test
     public void testSetsGetsNullTipo() {
         Alimento alimentoTest = new Alimento(null, null, null, null);
-        assertEquals(alimentoTest.getTipoAlimento(), "No definido");
+        //assertEquals(alimentoTest.getTipoAlimento(), "No definido");
+        assertEquals(alimentoTest.getTipoAlimento(), null);
     }
 
     @Test
@@ -61,7 +62,7 @@ public class AlimentoTest {
     @Test
     public void testSetsGetsTipoDatosVacios() {
         Alimento alimentoTest = new Alimento("", "", null, null);
-        assertEquals(alimentoTest.getTipoAlimento(), "No definido");
+        assertEquals(alimentoTest.getTipoAlimento(), "");
     }
 
     @Test

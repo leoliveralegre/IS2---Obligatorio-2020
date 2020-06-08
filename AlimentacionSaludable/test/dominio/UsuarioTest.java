@@ -32,7 +32,7 @@ public class UsuarioTest {
     @Test
     public void testGetsSetsNullNombre() {
         Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(usuario.getNombre(), "Nombre no ingresado");
+        assertEquals(null, usuario.getNombre());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class UsuarioTest {
     @Test
     public void testGetsSetsNullNacionalidad() {
         Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(usuario.getNacionalidad(), "Nacionalidad no ingresada");
+        assertEquals(usuario.getNacionalidad(), null);
     }
 
     @Test

@@ -77,8 +77,8 @@ public class ProfesionalTest {
         String paisGraduacion = null;
         Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
                 tituloProf, fechaGrad, paisGraduacion);
-        String toStringEperado = "Nombre no ingresado";
-        assertEquals(prof.toString(), toStringEperado);
+        String toStringEperado = "Datos no ingresados";
+        assertEquals(toStringEperado, prof.toString());
     }
 
     public void testToStringDatosVacios() {

@@ -12,7 +12,7 @@ public class ComposicionAlimentoTest {
     @Test
     public void testGetsSetsNull() {
         ComposicionAlimento composicion = new ComposicionAlimento(null, 0);
-        assertEquals(composicion.getNutriente(), "No definido");
+        assertEquals(composicion.getNutriente(), null);
     }
 
     @Test

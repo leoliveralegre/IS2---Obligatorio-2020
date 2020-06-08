@@ -55,11 +55,16 @@ public final class Profesional extends Persona {
 
     public void setPaisGraduacion(String unPaisGraduacion) {
         paisGraduacion = unPaisGraduacion;
-        
+
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        try {
+            return super.toString();
+        } catch (Exception e) {
+            return "Datos no ingresados";
+        }
+        
     }
 }
