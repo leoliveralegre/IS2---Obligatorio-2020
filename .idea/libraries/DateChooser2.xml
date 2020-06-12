@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DateChooser2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AlimentacionSaludable/javadoc/DateChooser.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

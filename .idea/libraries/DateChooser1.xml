@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DateChooser1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AlimentacionSaludable/Date Chooser Plugin/lib/DateChooser.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
