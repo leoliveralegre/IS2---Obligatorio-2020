@@ -6,7 +6,6 @@ import dominio.Sistema.Paises;
 import dominio.Sistema.Preferencias;
 import dominio.Sistema.Restricciones;
 import java.util.ArrayList;
-import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -308,7 +307,7 @@ public class SistemaTest {
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(user.getAlimentosIngeridos(), "11/02/16", "Papa");
         assertFalse(retorno);
     }
-   
+
     @Test
     public void testDevolverPlanDadoNombreNull() {
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();

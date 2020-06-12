@@ -51,8 +51,8 @@ public final class Sistema implements Serializable {
         return personaLogueada;
     }
 
-    public void setPersonaLogueada(Persona personaL) {
-        personaLogueada = personaL;
+    public void setPersonaLogueada(Persona personaLogueada) {
+        personaLogueada = personaLogueada;
         
     }
 
