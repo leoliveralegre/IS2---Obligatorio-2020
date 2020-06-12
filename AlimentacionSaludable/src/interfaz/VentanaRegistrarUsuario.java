@@ -94,6 +94,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         lblNombreVacio = new javax.swing.JLabel();
         lblApellidoVacio = new javax.swing.JLabel();
         lblPaisVacio = new javax.swing.JLabel();
+        btnCerrarProfesional = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1060, 800));
@@ -167,29 +168,20 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
         panel2.setMaximumSize(new java.awt.Dimension(800, 800));
         panel2.setMinimumSize(new java.awt.Dimension(800, 800));
         panel2.setPreferredSize(new java.awt.Dimension(800, 800));
-        panel2.setLayout(null);
 
         lblNuevoUsuario.setFont(new java.awt.Font("Levenim MT", 0, 65)); // NOI18N
         lblNuevoUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblNuevoUsuario.setText("Nuevo Usuario");
-        panel2.add(lblNuevoUsuario);
-        lblNuevoUsuario.setBounds(203, 36, 475, 91);
 
         lblIconoNuevoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoDeUsuarioStandard.png"))); // NOI18N
-        panel2.add(lblIconoNuevoUsuario);
-        lblIconoNuevoUsuario.setBounds(85, 27, 100, 100);
 
         lblNombre.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Nombre");
-        panel2.add(lblNombre);
-        lblNombre.setBounds(31, 182, 181, 38);
 
         lblApellido.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido");
-        panel2.add(lblApellido);
-        lblApellido.setBounds(31, 231, 171, 38);
 
         txtNombre.setBackground(new java.awt.Color(227, 227, 227));
         txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
@@ -200,8 +192,6 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
                 txtNombreFocusLost(evt);
             }
         });
-        panel2.add(txtNombre);
-        txtNombre.setBounds(260, 180, 181, 38);
 
         txtApellido.setBackground(new java.awt.Color(227, 227, 227));
         txtApellido.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
@@ -212,76 +202,54 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
                 txtApellidoFocusLost(evt);
             }
         });
-        panel2.add(txtApellido);
-        txtApellido.setBounds(260, 230, 181, 34);
 
         lblTxtPreferencias.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtPreferencias.setText("Preferencias");
-        panel2.add(lblTxtPreferencias);
-        lblTxtPreferencias.setBounds(31, 423, 265, 38);
 
         rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnVerduras.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnVerduras.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnVerduras.setText("Preferencia 3");
-        panel2.add(rdBtnVerduras);
-        rdBtnVerduras.setBounds(31, 544, 195, 35);
 
         rdBtnHarinas.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnHarinas.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnHarinas.setText("Preferencia 5");
-        panel2.add(rdBtnHarinas);
-        rdBtnHarinas.setBounds(31, 620, 153, 35);
 
         rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnFrutas.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnFrutas.setText("Preferencia 4");
-        panel2.add(rdBtnFrutas);
-        rdBtnFrutas.setBounds(31, 582, 153, 35);
 
         rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnCarnesRojas.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnCarnesRojas.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnCarnesRojas.setText("Preferencia 1");
-        panel2.add(rdBtnCarnesRojas);
-        rdBtnCarnesRojas.setBounds(31, 468, 218, 35);
 
         rdBtnCarnesBlancas.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnCarnesBlancas.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnCarnesBlancas.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnCarnesBlancas.setText("Preferencia 2");
-        panel2.add(rdBtnCarnesBlancas);
-        rdBtnCarnesBlancas.setBounds(31, 506, 209, 35);
 
         lblTxtRestricciones.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblTxtRestricciones.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtRestricciones.setText("Restricciones");
-        panel2.add(lblTxtRestricciones);
-        lblTxtRestricciones.setBounds(469, 423, 208, 38);
 
         rdBtnCeliaco.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnCeliaco.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnCeliaco.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnCeliaco.setText("Restriccion 4");
-        panel2.add(rdBtnCeliaco);
-        rdBtnCeliaco.setBounds(469, 582, 145, 35);
 
         rdBtnDiabetes.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnDiabetes.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnDiabetes.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnDiabetes.setText("Restriccion 1");
-        panel2.add(rdBtnDiabetes);
-        rdBtnDiabetes.setBounds(469, 468, 175, 35);
 
         rdBtnVegano.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnVegano.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnVegano.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnVegano.setText("Restriccion 2");
-        panel2.add(rdBtnVegano);
-        rdBtnVegano.setBounds(469, 506, 145, 35);
 
         btnIngresarUsuarioASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoConfirmar.png"))); // NOI18N
         btnIngresarUsuarioASistema.setBorderPainted(false);
@@ -291,14 +259,10 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
                 btnIngresarUsuarioASistemaActionPerformed(evt);
             }
         });
-        panel2.add(btnIngresarUsuarioASistema);
-        btnIngresarUsuarioASistema.setBounds(654, 657, 99, 94);
 
         lblTxtNacionalidad.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblTxtNacionalidad.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtNacionalidad.setText("Nacionalidad");
-        panel2.add(lblTxtNacionalidad);
-        lblTxtNacionalidad.setBounds(30, 280, 204, 38);
 
         listaNacionalidad.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         listaNacionalidad.addItemListener(new java.awt.event.ItemListener() {
@@ -306,124 +270,224 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
                 listaNacionalidadItemStateChanged(evt);
             }
         });
-        panel2.add(listaNacionalidad);
-        listaNacionalidad.setBounds(260, 280, 270, 40);
 
         lblTxtFechaNac.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblTxtFechaNac.setForeground(new java.awt.Color(255, 255, 255));
         lblTxtFechaNac.setText("Fecha de nacimiento");
-        panel2.add(lblTxtFechaNac);
-        lblTxtFechaNac.setBounds(30, 340, 328, 38);
 
         rdBtnIntoleranteLactosa.setBackground(new java.awt.Color(51, 51, 51));
         rdBtnIntoleranteLactosa.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         rdBtnIntoleranteLactosa.setForeground(new java.awt.Color(255, 255, 255));
         rdBtnIntoleranteLactosa.setText("Restriccion 3");
         rdBtnIntoleranteLactosa.setActionCommand("");
-        panel2.add(rdBtnIntoleranteLactosa);
-        rdBtnIntoleranteLactosa.setBounds(469, 544, 276, 35);
 
-        dateChooserFechaNacimiento.setCurrentView(new datechooser.view.appearance.AppearancesList("Swing",
-            new datechooser.view.appearance.ViewAppearance("custom",
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    true,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 255),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(128, 128, 128),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(255, 0, 0),
-                    false,
-                    false,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                (datechooser.view.BackRenderer)null,
-                false,
-                true)));
-    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font("Century Gothic", java.awt.Font.PLAIN, 19));
-    dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));
-    dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));
-    panel2.add(dateChooserFechaNacimiento);
-    dateChooserFechaNacimiento.setBounds(370, 340, 150, 30);
+        dateChooserFechaNacimiento.setFieldFont(new java.awt.Font("Century Gothic", java.awt.Font.PLAIN, 19));
+        dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));
+        dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));
 
-    btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"))); // NOI18N
-    btnIngresarFotoPerfil.setBorderPainted(false);
-    btnIngresarFotoPerfil.setContentAreaFilled(false);
-    btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btnIngresarFotoPerfilActionPerformed(evt);
-        }
-    });
-    panel2.add(btnIngresarFotoPerfil);
-    btnIngresarFotoPerfil.setBounds(640, 160, 124, 117);
+        btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarFotoUsuario.png"))); // NOI18N
+        btnIngresarFotoPerfil.setBorderPainted(false);
+        btnIngresarFotoPerfil.setContentAreaFilled(false);
+        btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarFotoPerfilActionPerformed(evt);
+            }
+        });
 
-    lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));
-    lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-    panel2.add(lblValidarNombre);
-    lblValidarNombre.setBounds(460, 180, 32, 44);
+        lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
 
-    lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));
-    lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-    panel2.add(lblValidarApellido);
-    lblValidarApellido.setBounds(460, 230, 32, 44);
+        lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
 
-    lblValidarNacionalidad.setForeground(new java.awt.Color(255, 255, 255));
-    lblValidarNacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-    panel2.add(lblValidarNacionalidad);
-    lblValidarNacionalidad.setBounds(540, 280, 32, 44);
+        lblValidarNacionalidad.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarNacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
 
-    lblDatosIncorrectos.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-    lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));
-    lblDatosIncorrectos.setText("Aún quedan datos incorrectos");
-    panel2.add(lblDatosIncorrectos);
-    lblDatosIncorrectos.setBounds(309, 683, 341, 26);
+        lblDatosIncorrectos.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));
+        lblDatosIncorrectos.setText("Aún quedan datos incorrectos");
 
-    lblNombreVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-    lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));
-    lblNombreVacio.setText("Dato vacío");
-    panel2.add(lblNombreVacio);
-    lblNombreVacio.setBounds(500, 180, 134, 38);
+        lblNombreVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblNombreVacio.setText("Dato vacío");
 
-    lblApellidoVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-    lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));
-    lblApellidoVacio.setText("Dato vacío");
-    panel2.add(lblApellidoVacio);
-    lblApellidoVacio.setBounds(500, 230, 134, 38);
+        lblApellidoVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblApellidoVacio.setText("Dato vacío");
 
-    lblPaisVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-    lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));
-    lblPaisVacio.setText("Dato vacío");
-    panel2.add(lblPaisVacio);
-    lblPaisVacio.setBounds(580, 280, 120, 38);
+        lblPaisVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblPaisVacio.setText("Dato vacío");
 
-    getContentPane().add(panel2);
-    panel2.setBounds(275, 0, 950, 800);
+        btnCerrarProfesional.setBackground(new java.awt.Color(51, 51, 51));
+        btnCerrarProfesional.setForeground(new java.awt.Color(51, 51, 51));
+        btnCerrarProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
+        btnCerrarProfesional.setBorderPainted(false);
+        btnCerrarProfesional.setContentAreaFilled(false);
+        btnCerrarProfesional.setFocusPainted(false);
+        btnCerrarProfesional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarProfesionalActionPerformed(evt);
+            }
+        });
 
-    pack();
+        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
+        panel2.setLayout(panel2Layout);
+        panel2Layout.setHorizontalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(lblIconoNuevoUsuario)
+                .addGap(18, 18, 18)
+                .addComponent(lblNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btnCerrarProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblValidarNombre)
+                    .addComponent(lblValidarApellido))
+                .addGap(8, 8, 8)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNombreVacio, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblApellidoVacio, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(btnIngresarFotoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(lblTxtNacionalidad)
+                .addGap(26, 26, 26)
+                .addComponent(listaNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(lblValidarNacionalidad)
+                .addGap(8, 8, 8)
+                .addComponent(lblPaisVacio, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(lblTxtFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(dateChooserFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblTxtPreferencias, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(173, 173, 173)
+                .addComponent(lblTxtRestricciones, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(rdBtnCarnesRojas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(220, 220, 220)
+                .addComponent(rdBtnDiabetes, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(rdBtnCarnesBlancas, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(229, 229, 229)
+                .addComponent(rdBtnVegano))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(rdBtnVerduras, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(243, 243, 243)
+                .addComponent(rdBtnIntoleranteLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(rdBtnFrutas)
+                .addGap(285, 285, 285)
+                .addComponent(rdBtnCeliaco))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(rdBtnHarinas))
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(309, 309, 309)
+                .addComponent(lblDatosIncorrectos, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(btnIngresarUsuarioASistema))
+        );
+        panel2Layout.setVerticalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lblIconoNuevoUsuario))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(lblNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCerrarProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(lblNombre)
+                        .addGap(11, 11, 11)
+                        .addComponent(lblApellido))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblValidarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(lblValidarApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblNombreVacio, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(lblApellidoVacio, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnIngresarFotoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTxtNacionalidad)
+                    .addComponent(listaNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblValidarNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPaisVacio, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTxtFechaNac)
+                    .addComponent(dateChooserFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTxtPreferencias)
+                    .addComponent(lblTxtRestricciones))
+                .addGap(7, 7, 7)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rdBtnCarnesRojas)
+                    .addComponent(rdBtnDiabetes))
+                .addGap(3, 3, 3)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rdBtnCarnesBlancas)
+                    .addComponent(rdBtnVegano))
+                .addGap(3, 3, 3)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rdBtnVerduras)
+                    .addComponent(rdBtnIntoleranteLactosa))
+                .addGap(3, 3, 3)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rdBtnFrutas)
+                    .addComponent(rdBtnCeliaco))
+                .addGap(3, 3, 3)
+                .addComponent(rdBtnHarinas)
+                .addGap(2, 2, 2)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(lblDatosIncorrectos))
+                    .addComponent(btnIngresarUsuarioASistema, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        getContentPane().add(panel2);
+        panel2.setBounds(275, 0, 950, 800);
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -517,6 +581,11 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 
     }//GEN-LAST:event_listaNacionalidadItemStateChanged
 
+    private void btnCerrarProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarProfesionalActionPerformed
+        this.sistema.guardarDatosSistema();
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarProfesionalActionPerformed
+
     void agregarRestriccionesUsuario(ArrayList<String> restricciones) {
         if (this.rdBtnCeliaco.isSelected()) {
             restricciones.add("Celíaco");
@@ -551,6 +620,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarProfesional;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnIngresarFotoPerfil;
     private javax.swing.JButton btnIngresarUsuarioASistema;

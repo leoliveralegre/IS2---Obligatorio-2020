@@ -60,7 +60,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
         lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsuario.setText("Ayuda");
         jPanel1.add(lblNombreUsuario);
-        lblNombreUsuario.setBounds(203, 27, 192, 78);
+        lblNombreUsuario.setBounds(203, 27, 192, 70);
 
         btnIngresarAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresarAlimentoIngerido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Chat_70px.png"))); // NOI18N
@@ -158,7 +158,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarAlimentoIngeridoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlimentoIngeridoActionPerformed
-       
+
     }//GEN-LAST:event_btnIngresarAlimentoIngeridoActionPerformed
 
     private void btnIngresarAlimentoIngerido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlimentoIngerido1ActionPerformed
@@ -170,7 +170,8 @@ public class AyudaUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnIngresarAlimentoIngerido2ActionPerformed
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-        this.dispose();
+        this.sistema.guardarDatosSistema();
+        System.exit(0);
     }//GEN-LAST:event_btnCerrarSistemaActionPerformed
 
 
