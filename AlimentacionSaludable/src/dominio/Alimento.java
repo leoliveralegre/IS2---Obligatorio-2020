@@ -2,25 +2,25 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import javax.swing.ImageIcon;
-import java.util.Currency;
 
 public final class Alimento implements Serializable {
 
     private String nombre;
     private String tipoAlimento;
-    private ArrayList<ComposicionAlimento> listaNutrientesConProporcion;
-    public ImageIcon fotoDelAlimento;
+    private List<ComposicionAlimento> listaNutrientesConProporcion;
+    private ImageIcon fotoDelAlimento;
 
     public Alimento(String unNombre,
             String unTipoAlimento,
-            ArrayList<ComposicionAlimento> listaNutrientes,
+            List<ComposicionAlimento> listaNutrientes,
             ImageIcon foto) {
 
         this.setNombre(unNombre);
         this.setTipoAlimento(unTipoAlimento);
-        this.setListaNutrientesConProporcion(listaNutrientes);
+        this.setListaNutrientesConProporcion((ArrayList<ComposicionAlimento>) listaNutrientes);
         this.setFotoDelAlimento(foto);
     }
 
@@ -40,12 +40,11 @@ public final class Alimento implements Serializable {
         return this.tipoAlimento;
     }
 
-    public void setTipoAlimento(String TA) {
-        tipoAlimento = TA;
-        
+    public void setTipoAlimento(String tiposAli) {
+        tipoAlimento = tiposAli;
     }
 
-    public ArrayList<ComposicionAlimento> getListaNutrientesConProporcion() {
+    public List<ComposicionAlimento> getListaNutrientesConProporcion() {
         if (this.listaNutrientesConProporcion.isEmpty()) {
             return new ArrayList<>();
         } else {
@@ -53,7 +52,7 @@ public final class Alimento implements Serializable {
         }
     }
 
-    public void setListaNutrientesConProporcion(ArrayList<ComposicionAlimento> listaNutrientes) {
+    public void setListaNutrientesConProporcion(List<ComposicionAlimento> listaNutrientes) {
         if (listaNutrientes == null) {
             this.listaNutrientesConProporcion = new ArrayList<>();
         } else {
@@ -80,8 +79,22 @@ public final class Alimento implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
+        if(obj == null)  
+            return false;
+       
+        if (this.getClass() != obj.getClass()) 
+            return false;
         Alimento otroAlimento = (Alimento) obj;
-        return (this.getNombre().equals(otroAlimento.getNombre()));
+        return (otroAlimento.getNombre().equals(this.getNombre()));
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.nombre);
+        hash = 53 * hash + Objects.hashCode(this.tipoAlimento);
+        hash = 53 * hash + Objects.hashCode(this.listaNutrientesConProporcion);
+        hash = 53 * hash + Objects.hashCode(this.fotoDelAlimento);
+        return hash;
+    }
 }

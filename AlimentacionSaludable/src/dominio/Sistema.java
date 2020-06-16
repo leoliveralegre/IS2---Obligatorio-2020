@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import java.util.Currency;
+import java.util.zip.ZipOutputStream;
 import javax.swing.ImageIcon;
 
 public final class Sistema implements Serializable {
@@ -117,7 +118,7 @@ public final class Sistema implements Serializable {
     }
 
     public enum Preferencias {
-        CarnesRojas, CarnesBlancas, Verduras, Frutas, Harinas;
+        CARNES_ROJAS, CARNES_BLANCAS, VERDURAS, FRUTAS, HARINAS;
     }
 
     public enum Restricciones {
@@ -189,16 +190,18 @@ public final class Sistema implements Serializable {
         return lstIngestas;
     }
 
-    public void guardarDatosSistema() {
-        try {
-            FileOutputStream archivo = new FileOutputStream("Sistema.data");
+    public void guardarDatosSistema() throws IOException {
+        FileOutputStream archivo = new FileOutputStream("Sistema.data");
+        try  {
             BufferedOutputStream buffer = new BufferedOutputStream(archivo);
             try (ObjectOutputStream objetoASerializar = new ObjectOutputStream(buffer)) {
                 objetoASerializar.writeObject(this);
                 objetoASerializar.flush();
-            }
+            } 
         } catch (IOException e) {
-
+            throw new IOException(e.getMessage());
+        } finally {
+            archivo.close();
         }
     }
 

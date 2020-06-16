@@ -6,7 +6,10 @@ import dominio.Ingesta;
 import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -2078,7 +2081,11 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_lblValidarTipoAlimentoFocusGained
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        sistema.guardarDatosSistema();
+        try {
+            sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalProfesional.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowClosing
 
     private void lblValidarNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lblValidarNombreFocusLost
@@ -2389,17 +2396,29 @@ public final class VentanaMenuPrincipalProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnCerrarProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarProfesionalActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalProfesional.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarProfesionalActionPerformed
 
     private void btnCerrarUsuario5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuario5ActionPerformed
-       this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalProfesional.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuario5ActionPerformed
 
     private void btnCerrarUsuario7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuario7ActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalProfesional.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuario7ActionPerformed
 

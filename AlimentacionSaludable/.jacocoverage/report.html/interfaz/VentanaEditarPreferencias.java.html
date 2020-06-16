@@ -2,245 +2,252 @@
 
 import dominio.Sistema;
 import dominio.Usuario;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VentanaEditarPreferencias extends javax.swing.JDialog {
 
     private Sistema sistema;
     private Usuario usuarioActual;
 
-<span class="nc" id="L12">    public VentanaEditarPreferencias(Sistema unSistema, Usuario unUsuario) {</span>
-<span class="nc" id="L13">        initComponents();</span>
-<span class="nc" id="L14">        this.setLocationRelativeTo(null);</span>
-<span class="nc" id="L15">        this.sistema = unSistema;</span>
-<span class="nc" id="L16">        this.usuarioActual = unUsuario;</span>
-<span class="nc" id="L17">        cargarListaPreferencias();</span>
-<span class="nc" id="L18">        this.panelListo.setVisible(false);</span>
-<span class="nc" id="L19">    }</span>
+<span class="nc" id="L15">    public VentanaEditarPreferencias(Sistema unSistema, Usuario unUsuario) {</span>
+<span class="nc" id="L16">        initComponents();</span>
+<span class="nc" id="L17">        this.setLocationRelativeTo(null);</span>
+<span class="nc" id="L18">        this.sistema = unSistema;</span>
+<span class="nc" id="L19">        this.usuarioActual = unUsuario;</span>
+<span class="nc" id="L20">        cargarListaPreferencias();</span>
+<span class="nc" id="L21">        this.panelListo.setVisible(false);</span>
+<span class="nc" id="L22">    }</span>
 
     public Sistema getSistema() {
-<span class="nc" id="L22">        return sistema;</span>
+<span class="nc" id="L25">        return sistema;</span>
     }
 
     public void setSistema(Sistema unSistema) {
-<span class="nc" id="L26">        this.sistema = unSistema;</span>
-<span class="nc" id="L27">    }</span>
+<span class="nc" id="L29">        this.sistema = unSistema;</span>
+<span class="nc" id="L30">    }</span>
 
     public Usuario getUsuarioActual() {
-<span class="nc" id="L30">        return usuarioActual;</span>
+<span class="nc" id="L33">        return usuarioActual;</span>
     }
 
     public void setUsuarioActual(Usuario unUsuarioActual) {
-<span class="nc" id="L34">        this.usuarioActual = unUsuarioActual;</span>
-<span class="nc" id="L35">    }</span>
+<span class="nc" id="L37">        this.usuarioActual = unUsuarioActual;</span>
+<span class="nc" id="L38">    }</span>
 
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L41">        panelListo = new javax.swing.JPanel();</span>
-<span class="nc" id="L42">        lblListo = new javax.swing.JLabel();</span>
-<span class="nc" id="L43">        lblIconoListo = new javax.swing.JLabel();</span>
-<span class="nc" id="L44">        panelEditarPreferencias = new javax.swing.JPanel();</span>
-<span class="nc" id="L45">        lblEditar = new javax.swing.JLabel();</span>
-<span class="nc" id="L46">        lblTxtPreferencias = new javax.swing.JLabel();</span>
-<span class="nc" id="L47">        rdBtnVerduras = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L48">        rdBtnHarinas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L49">        rdBtnFrutas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L50">        rdBtnCarnesRojas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L51">        rdBtnCarnesBlancas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L52">        btnEditarPreferencias = new javax.swing.JButton();</span>
-<span class="nc" id="L53">        lblEditarPreferencias = new javax.swing.JLabel();</span>
+<span class="nc" id="L44">        panelListo = new javax.swing.JPanel();</span>
+<span class="nc" id="L45">        lblListo = new javax.swing.JLabel();</span>
+<span class="nc" id="L46">        lblIconoListo = new javax.swing.JLabel();</span>
+<span class="nc" id="L47">        panelEditarPreferencias = new javax.swing.JPanel();</span>
+<span class="nc" id="L48">        lblEditar = new javax.swing.JLabel();</span>
+<span class="nc" id="L49">        lblTxtPreferencias = new javax.swing.JLabel();</span>
+<span class="nc" id="L50">        rdBtnVerduras = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L51">        rdBtnHarinas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L52">        rdBtnFrutas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L53">        rdBtnCarnesRojas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L54">        rdBtnCarnesBlancas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L55">        btnEditarPreferencias = new javax.swing.JButton();</span>
+<span class="nc" id="L56">        lblEditarPreferencias = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L55">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
-<span class="nc" id="L56">        setMinimumSize(new java.awt.Dimension(508, 450));</span>
-<span class="nc" id="L57">        setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);</span>
-<span class="nc" id="L58">        setResizable(false);</span>
-<span class="nc" id="L59">        addWindowListener(new java.awt.event.WindowAdapter() {</span>
+<span class="nc" id="L58">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
+<span class="nc" id="L59">        setMinimumSize(new java.awt.Dimension(508, 450));</span>
+<span class="nc" id="L60">        setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);</span>
+<span class="nc" id="L61">        setResizable(false);</span>
+<span class="nc" id="L62">        addWindowListener(new java.awt.event.WindowAdapter() {</span>
             public void windowClosing(java.awt.event.WindowEvent evt) {
-<span class="nc" id="L61">                formWindowClosing(evt);</span>
-<span class="nc" id="L62">            }</span>
+<span class="nc" id="L64">                formWindowClosing(evt);</span>
+<span class="nc" id="L65">            }</span>
         });
 
-<span class="nc" id="L65">        panelListo.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L66">        panelListo.setMaximumSize(new java.awt.Dimension(508, 450));</span>
-<span class="nc" id="L67">        panelListo.setMinimumSize(new java.awt.Dimension(508, 450));</span>
+<span class="nc" id="L68">        panelListo.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L69">        panelListo.setMaximumSize(new java.awt.Dimension(508, 450));</span>
+<span class="nc" id="L70">        panelListo.setMinimumSize(new java.awt.Dimension(508, 450));</span>
 
-<span class="nc" id="L69">        lblListo.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 1, 40)); // NOI18N</span>
-<span class="nc" id="L70">        lblListo.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L71">        lblListo.setText(&quot;Listo!&quot;);</span>
+<span class="nc" id="L72">        lblListo.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 1, 40)); // NOI18N</span>
+<span class="nc" id="L73">        lblListo.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L74">        lblListo.setText(&quot;Listo!&quot;);</span>
 
-<span class="nc" id="L73">        lblIconoListo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoOK.png&quot;))); // NOI18N</span>
+<span class="nc" id="L76">        lblIconoListo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoOK.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L75">        javax.swing.GroupLayout panelListoLayout = new javax.swing.GroupLayout(panelListo);</span>
-<span class="nc" id="L76">        panelListo.setLayout(panelListoLayout);</span>
-<span class="nc" id="L77">        panelListoLayout.setHorizontalGroup(</span>
-<span class="nc" id="L78">            panelListoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L79">            .addGroup(panelListoLayout.createSequentialGroup()</span>
-<span class="nc" id="L80">                .addGap(187, 187, 187)</span>
-<span class="nc" id="L81">                .addGroup(panelListoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L82">                    .addComponent(lblListo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L83">                    .addComponent(lblIconoListo))</span>
-<span class="nc" id="L84">                .addContainerGap(181, Short.MAX_VALUE))</span>
+<span class="nc" id="L78">        javax.swing.GroupLayout panelListoLayout = new javax.swing.GroupLayout(panelListo);</span>
+<span class="nc" id="L79">        panelListo.setLayout(panelListoLayout);</span>
+<span class="nc" id="L80">        panelListoLayout.setHorizontalGroup(</span>
+<span class="nc" id="L81">            panelListoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L82">            .addGroup(panelListoLayout.createSequentialGroup()</span>
+<span class="nc" id="L83">                .addGap(187, 187, 187)</span>
+<span class="nc" id="L84">                .addGroup(panelListoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L85">                    .addComponent(lblListo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L86">                    .addComponent(lblIconoListo))</span>
+<span class="nc" id="L87">                .addContainerGap(181, Short.MAX_VALUE))</span>
         );
-<span class="nc" id="L86">        panelListoLayout.setVerticalGroup(</span>
-<span class="nc" id="L87">            panelListoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L88">            .addGroup(panelListoLayout.createSequentialGroup()</span>
-<span class="nc" id="L89">                .addGap(104, 104, 104)</span>
-<span class="nc" id="L90">                .addComponent(lblIconoListo)</span>
-<span class="nc" id="L91">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L92">                .addComponent(lblListo)</span>
-<span class="nc" id="L93">                .addContainerGap(186, Short.MAX_VALUE))</span>
-        );
-
-<span class="nc" id="L96">        panelEditarPreferencias.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L97">        panelEditarPreferencias.setMaximumSize(new java.awt.Dimension(508, 450));</span>
-<span class="nc" id="L98">        panelEditarPreferencias.setMinimumSize(new java.awt.Dimension(508, 450));</span>
-<span class="nc" id="L99">        panelEditarPreferencias.setPreferredSize(new java.awt.Dimension(508, 450));</span>
-<span class="nc" id="L100">        panelEditarPreferencias.setLayout(null);</span>
-
-<span class="nc" id="L102">        lblEditar.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 50)); // NOI18N</span>
-<span class="nc" id="L103">        lblEditar.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L104">        lblEditar.setText(&quot;Editar&quot;);</span>
-<span class="nc" id="L105">        panelEditarPreferencias.add(lblEditar);</span>
-<span class="nc" id="L106">        lblEditar.setBounds(120, 20, 173, 62);</span>
-
-<span class="nc" id="L108">        lblTxtPreferencias.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L109">        lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L110">        lblTxtPreferencias.setText(&quot;Preferencias&quot;);</span>
-<span class="nc" id="L111">        panelEditarPreferencias.add(lblTxtPreferencias);</span>
-<span class="nc" id="L112">        lblTxtPreferencias.setBounds(70, 100, 265, 38);</span>
-
-<span class="nc" id="L114">        rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L115">        rdBtnVerduras.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L116">        rdBtnVerduras.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L117">        rdBtnVerduras.setText(&quot;Preferencia 3&quot;);</span>
-<span class="nc" id="L118">        rdBtnVerduras.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L120">                rdBtnVerdurasActionPerformed(evt);</span>
-<span class="nc" id="L121">            }</span>
-        });
-<span class="nc" id="L123">        panelEditarPreferencias.add(rdBtnVerduras);</span>
-<span class="nc" id="L124">        rdBtnVerduras.setBounds(100, 230, 250, 35);</span>
-
-<span class="nc" id="L126">        rdBtnHarinas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L127">        rdBtnHarinas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L128">        rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L129">        rdBtnHarinas.setText(&quot;Preferencia 5&quot;);</span>
-<span class="nc" id="L130">        rdBtnHarinas.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L132">                rdBtnHarinasActionPerformed(evt);</span>
-<span class="nc" id="L133">            }</span>
-        });
-<span class="nc" id="L135">        panelEditarPreferencias.add(rdBtnHarinas);</span>
-<span class="nc" id="L136">        rdBtnHarinas.setBounds(100, 310, 200, 35);</span>
-
-<span class="nc" id="L138">        rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L139">        rdBtnFrutas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L140">        rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L141">        rdBtnFrutas.setText(&quot;Preferencia 4&quot;);</span>
-<span class="nc" id="L142">        panelEditarPreferencias.add(rdBtnFrutas);</span>
-<span class="nc" id="L143">        rdBtnFrutas.setBounds(100, 270, 240, 35);</span>
-
-<span class="nc" id="L145">        rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L146">        rdBtnCarnesRojas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L147">        rdBtnCarnesRojas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L148">        rdBtnCarnesRojas.setText(&quot;Preferencia 1&quot;);</span>
-<span class="nc" id="L149">        rdBtnCarnesRojas.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L151">                rdBtnCarnesRojasActionPerformed(evt);</span>
-<span class="nc" id="L152">            }</span>
-        });
-<span class="nc" id="L154">        panelEditarPreferencias.add(rdBtnCarnesRojas);</span>
-<span class="nc" id="L155">        rdBtnCarnesRojas.setBounds(100, 160, 240, 35);</span>
-
-<span class="nc" id="L157">        rdBtnCarnesBlancas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L158">        rdBtnCarnesBlancas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L159">        rdBtnCarnesBlancas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L160">        rdBtnCarnesBlancas.setText(&quot;Preferencia 2&quot;);</span>
-<span class="nc" id="L161">        panelEditarPreferencias.add(rdBtnCarnesBlancas);</span>
-<span class="nc" id="L162">        rdBtnCarnesBlancas.setBounds(100, 190, 240, 35);</span>
-
-<span class="nc" id="L164">        btnEditarPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoOkEditar.png&quot;))); // NOI18N</span>
-<span class="nc" id="L165">        btnEditarPreferencias.setBorderPainted(false);</span>
-<span class="nc" id="L166">        btnEditarPreferencias.setContentAreaFilled(false);</span>
-<span class="nc" id="L167">        btnEditarPreferencias.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L169">                btnEditarPreferenciasActionPerformed(evt);</span>
-<span class="nc" id="L170">            }</span>
-        });
-<span class="nc" id="L172">        panelEditarPreferencias.add(btnEditarPreferencias);</span>
-<span class="nc" id="L173">        btnEditarPreferencias.setBounds(320, 320, 63, 66);</span>
-
-<span class="nc" id="L175">        lblEditarPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoEditarPreferencias.png&quot;))); // NOI18N</span>
-<span class="nc" id="L176">        panelEditarPreferencias.add(lblEditarPreferencias);</span>
-<span class="nc" id="L177">        lblEditarPreferencias.setBounds(38, 11, 72, 71);</span>
-
-<span class="nc" id="L179">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L180">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L181">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L182">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L183">            .addComponent(panelEditarPreferencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L184">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L185">                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L186">                    .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L187">                    .addComponent(panelListo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L188">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
-        );
-<span class="nc" id="L190">        layout.setVerticalGroup(</span>
-<span class="nc" id="L191">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L192">            .addComponent(panelEditarPreferencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L193">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L194">                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L195">                    .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L196">                    .addComponent(panelListo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L197">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+<span class="nc" id="L89">        panelListoLayout.setVerticalGroup(</span>
+<span class="nc" id="L90">            panelListoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L91">            .addGroup(panelListoLayout.createSequentialGroup()</span>
+<span class="nc" id="L92">                .addGap(104, 104, 104)</span>
+<span class="nc" id="L93">                .addComponent(lblIconoListo)</span>
+<span class="nc" id="L94">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L95">                .addComponent(lblListo)</span>
+<span class="nc" id="L96">                .addContainerGap(186, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L200">        pack();</span>
-<span class="nc" id="L201">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L99">        panelEditarPreferencias.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L100">        panelEditarPreferencias.setMaximumSize(new java.awt.Dimension(508, 450));</span>
+<span class="nc" id="L101">        panelEditarPreferencias.setMinimumSize(new java.awt.Dimension(508, 450));</span>
+<span class="nc" id="L102">        panelEditarPreferencias.setPreferredSize(new java.awt.Dimension(508, 450));</span>
+<span class="nc" id="L103">        panelEditarPreferencias.setLayout(null);</span>
+
+<span class="nc" id="L105">        lblEditar.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 50)); // NOI18N</span>
+<span class="nc" id="L106">        lblEditar.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L107">        lblEditar.setText(&quot;Editar&quot;);</span>
+<span class="nc" id="L108">        panelEditarPreferencias.add(lblEditar);</span>
+<span class="nc" id="L109">        lblEditar.setBounds(120, 20, 173, 62);</span>
+
+<span class="nc" id="L111">        lblTxtPreferencias.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L112">        lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L113">        lblTxtPreferencias.setText(&quot;Preferencias&quot;);</span>
+<span class="nc" id="L114">        panelEditarPreferencias.add(lblTxtPreferencias);</span>
+<span class="nc" id="L115">        lblTxtPreferencias.setBounds(70, 100, 265, 38);</span>
+
+<span class="nc" id="L117">        rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L118">        rdBtnVerduras.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L119">        rdBtnVerduras.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L120">        rdBtnVerduras.setText(&quot;Preferencia 3&quot;);</span>
+<span class="nc" id="L121">        rdBtnVerduras.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L123">                rdBtnVerdurasActionPerformed(evt);</span>
+<span class="nc" id="L124">            }</span>
+        });
+<span class="nc" id="L126">        panelEditarPreferencias.add(rdBtnVerduras);</span>
+<span class="nc" id="L127">        rdBtnVerduras.setBounds(100, 230, 250, 35);</span>
+
+<span class="nc" id="L129">        rdBtnHarinas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L130">        rdBtnHarinas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L131">        rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L132">        rdBtnHarinas.setText(&quot;Preferencia 5&quot;);</span>
+<span class="nc" id="L133">        rdBtnHarinas.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L135">                rdBtnHarinasActionPerformed(evt);</span>
+<span class="nc" id="L136">            }</span>
+        });
+<span class="nc" id="L138">        panelEditarPreferencias.add(rdBtnHarinas);</span>
+<span class="nc" id="L139">        rdBtnHarinas.setBounds(100, 310, 200, 35);</span>
+
+<span class="nc" id="L141">        rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L142">        rdBtnFrutas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L143">        rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L144">        rdBtnFrutas.setText(&quot;Preferencia 4&quot;);</span>
+<span class="nc" id="L145">        panelEditarPreferencias.add(rdBtnFrutas);</span>
+<span class="nc" id="L146">        rdBtnFrutas.setBounds(100, 270, 240, 35);</span>
+
+<span class="nc" id="L148">        rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L149">        rdBtnCarnesRojas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L150">        rdBtnCarnesRojas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L151">        rdBtnCarnesRojas.setText(&quot;Preferencia 1&quot;);</span>
+<span class="nc" id="L152">        rdBtnCarnesRojas.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L154">                rdBtnCarnesRojasActionPerformed(evt);</span>
+<span class="nc" id="L155">            }</span>
+        });
+<span class="nc" id="L157">        panelEditarPreferencias.add(rdBtnCarnesRojas);</span>
+<span class="nc" id="L158">        rdBtnCarnesRojas.setBounds(100, 160, 240, 35);</span>
+
+<span class="nc" id="L160">        rdBtnCarnesBlancas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L161">        rdBtnCarnesBlancas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L162">        rdBtnCarnesBlancas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L163">        rdBtnCarnesBlancas.setText(&quot;Preferencia 2&quot;);</span>
+<span class="nc" id="L164">        panelEditarPreferencias.add(rdBtnCarnesBlancas);</span>
+<span class="nc" id="L165">        rdBtnCarnesBlancas.setBounds(100, 190, 240, 35);</span>
+
+<span class="nc" id="L167">        btnEditarPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoOkEditar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L168">        btnEditarPreferencias.setBorderPainted(false);</span>
+<span class="nc" id="L169">        btnEditarPreferencias.setContentAreaFilled(false);</span>
+<span class="nc" id="L170">        btnEditarPreferencias.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L172">                btnEditarPreferenciasActionPerformed(evt);</span>
+<span class="nc" id="L173">            }</span>
+        });
+<span class="nc" id="L175">        panelEditarPreferencias.add(btnEditarPreferencias);</span>
+<span class="nc" id="L176">        btnEditarPreferencias.setBounds(320, 320, 63, 66);</span>
+
+<span class="nc" id="L178">        lblEditarPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoEditarPreferencias.png&quot;))); // NOI18N</span>
+<span class="nc" id="L179">        panelEditarPreferencias.add(lblEditarPreferencias);</span>
+<span class="nc" id="L180">        lblEditarPreferencias.setBounds(38, 11, 72, 71);</span>
+
+<span class="nc" id="L182">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L183">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L184">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L185">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L186">            .addComponent(panelEditarPreferencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L187">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L188">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L189">                    .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L190">                    .addComponent(panelListo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L191">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+        );
+<span class="nc" id="L193">        layout.setVerticalGroup(</span>
+<span class="nc" id="L194">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L195">            .addComponent(panelEditarPreferencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L196">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L197">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L198">                    .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L199">                    .addComponent(panelListo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L200">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+        );
+
+<span class="nc" id="L203">        pack();</span>
+<span class="nc" id="L204">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void rdBtnHarinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnHarinasActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L205">    }//GEN-LAST:event_rdBtnHarinasActionPerformed</span>
+<span class="nc" id="L208">    }//GEN-LAST:event_rdBtnHarinasActionPerformed</span>
 
     private void rdBtnCarnesRojasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnCarnesRojasActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L209">    }//GEN-LAST:event_rdBtnCarnesRojasActionPerformed</span>
+<span class="nc" id="L212">    }//GEN-LAST:event_rdBtnCarnesRojasActionPerformed</span>
 
     private void btnEditarPreferenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPreferenciasActionPerformed
-<span class="nc" id="L212">        ArrayList&lt;String&gt; preferencias = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L213">        agregarPreferenciasUsuario(preferencias);</span>
-<span class="nc" id="L214">        this.usuarioActual.actualizarPreferenciasUsuario(usuarioActual, preferencias);</span>
-<span class="nc" id="L215">        this.panelListo.setVisible(true);</span>
-<span class="nc" id="L216">        this.panelEditarPreferencias.setVisible(false);</span>
-<span class="nc" id="L217">    }//GEN-LAST:event_btnEditarPreferenciasActionPerformed</span>
+<span class="nc" id="L215">        ArrayList&lt;String&gt; preferencias = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L216">        agregarPreferenciasUsuario(preferencias);</span>
+<span class="nc" id="L217">        this.usuarioActual.actualizarPreferenciasUsuario(usuarioActual, preferencias);</span>
+<span class="nc" id="L218">        this.panelListo.setVisible(true);</span>
+<span class="nc" id="L219">        this.panelEditarPreferencias.setVisible(false);</span>
+<span class="nc" id="L220">    }//GEN-LAST:event_btnEditarPreferenciasActionPerformed</span>
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-<span class="nc" id="L220">        this.sistema.guardarDatosSistema();</span>
-<span class="nc" id="L221">    }//GEN-LAST:event_formWindowClosing</span>
+        try {
+<span class="nc" id="L224">            this.sistema.guardarDatosSistema();</span>
+<span class="nc" id="L225">        } catch (IOException ex) {</span>
+<span class="nc" id="L226">            Logger.getLogger(VentanaEditarPreferencias.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L227">        }</span>
+<span class="nc" id="L228">    }//GEN-LAST:event_formWindowClosing</span>
 
     private void rdBtnVerdurasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnVerdurasActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L225">    }//GEN-LAST:event_rdBtnVerdurasActionPerformed</span>
+<span class="nc" id="L232">    }//GEN-LAST:event_rdBtnVerdurasActionPerformed</span>
 
     void agregarPreferenciasUsuario(ArrayList&lt;String&gt; preferencias) {
-<span class="nc bnc" id="L228" title="All 2 branches missed.">        if (this.rdBtnCarnesBlancas.isSelected()) {</span>
-<span class="nc" id="L229">            preferencias.add(&quot;Carnes Blancas&quot;);</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">        if (this.rdBtnCarnesBlancas.isSelected()) {</span>
+<span class="nc" id="L236">            preferencias.add(&quot;Carnes Blancas&quot;);</span>
         }
-<span class="nc bnc" id="L231" title="All 2 branches missed.">        if (this.rdBtnCarnesRojas.isSelected()) {</span>
-<span class="nc" id="L232">            preferencias.add(&quot;Carnes Rojas&quot;);</span>
+<span class="nc bnc" id="L238" title="All 2 branches missed.">        if (this.rdBtnCarnesRojas.isSelected()) {</span>
+<span class="nc" id="L239">            preferencias.add(&quot;Carnes Rojas&quot;);</span>
         }
-<span class="nc bnc" id="L234" title="All 2 branches missed.">        if (this.rdBtnFrutas.isSelected()) {</span>
-<span class="nc" id="L235">            preferencias.add(&quot;Frutas&quot;);</span>
+<span class="nc bnc" id="L241" title="All 2 branches missed.">        if (this.rdBtnFrutas.isSelected()) {</span>
+<span class="nc" id="L242">            preferencias.add(&quot;Frutas&quot;);</span>
         }
-<span class="nc bnc" id="L237" title="All 2 branches missed.">        if (this.rdBtnVerduras.isSelected()) {</span>
-<span class="nc" id="L238">            preferencias.add(&quot;Verduras&quot;);</span>
+<span class="nc bnc" id="L244" title="All 2 branches missed.">        if (this.rdBtnVerduras.isSelected()) {</span>
+<span class="nc" id="L245">            preferencias.add(&quot;Verduras&quot;);</span>
         }
-<span class="nc bnc" id="L240" title="All 2 branches missed.">        if (this.rdBtnHarinas.isSelected()) {</span>
-<span class="nc" id="L241">            preferencias.add(&quot;Harinas&quot;);</span>
+<span class="nc bnc" id="L247" title="All 2 branches missed.">        if (this.rdBtnHarinas.isSelected()) {</span>
+<span class="nc" id="L248">            preferencias.add(&quot;Harinas&quot;);</span>
         }
-<span class="nc" id="L243">    }</span>
+<span class="nc" id="L250">    }</span>
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditarPreferencias;
     private javax.swing.JLabel lblEditar;
@@ -258,30 +265,30 @@ public class VentanaEditarPreferencias extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
    private void cargarListaPreferencias() {
-<span class="nc" id="L261">        Sistema.Preferencias[] listaPreferencias = new Sistema.Preferencias[5];</span>
-<span class="nc" id="L262">        listaPreferencias[0] = Sistema.Preferencias.CarnesBlancas;</span>
-<span class="nc" id="L263">        listaPreferencias[1] = Sistema.Preferencias.CarnesRojas;</span>
-<span class="nc" id="L264">        listaPreferencias[2] = Sistema.Preferencias.Frutas;</span>
-<span class="nc" id="L265">        listaPreferencias[3] = Sistema.Preferencias.Harinas;</span>
-<span class="nc" id="L266">        listaPreferencias[4] = Sistema.Preferencias.Verduras;</span>
-<span class="nc bnc" id="L267" title="All 2 branches missed.">        for (int i = 0; i &lt; listaPreferencias.length; i++) {</span>
-<span class="nc bnc" id="L268" title="All 2 branches missed.">            if (i == 0) {</span>
-<span class="nc" id="L269">                this.rdBtnCarnesRojas.setText(&quot;Carnes Rojas&quot;);</span>
+<span class="nc" id="L268">        Sistema.Preferencias[] listaPreferencias = new Sistema.Preferencias[5];</span>
+<span class="nc" id="L269">        listaPreferencias[0] = Sistema.Preferencias.CARNES_BLANCAS;</span>
+<span class="nc" id="L270">        listaPreferencias[1] = Sistema.Preferencias.CARNES_ROJAS;</span>
+<span class="nc" id="L271">        listaPreferencias[2] = Sistema.Preferencias.FRUTAS;</span>
+<span class="nc" id="L272">        listaPreferencias[3] = Sistema.Preferencias.HARINAS;</span>
+<span class="nc" id="L273">        listaPreferencias[4] = Sistema.Preferencias.VERDURAS;</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">        for (int i = 0; i &lt; listaPreferencias.length; i++) {</span>
+<span class="nc bnc" id="L275" title="All 2 branches missed.">            if (i == 0) {</span>
+<span class="nc" id="L276">                this.rdBtnCarnesRojas.setText(&quot;Carnes Rojas&quot;);</span>
             }
-<span class="nc bnc" id="L271" title="All 2 branches missed.">            if (i == 1) {</span>
-<span class="nc" id="L272">                this.rdBtnCarnesBlancas.setText(&quot;Carnes Blancas&quot;);</span>
+<span class="nc bnc" id="L278" title="All 2 branches missed.">            if (i == 1) {</span>
+<span class="nc" id="L279">                this.rdBtnCarnesBlancas.setText(&quot;Carnes Blancas&quot;);</span>
             }
-<span class="nc bnc" id="L274" title="All 2 branches missed.">            if (i == 2) {</span>
-<span class="nc" id="L275">                this.rdBtnFrutas.setText(&quot;Frutas&quot;);</span>
+<span class="nc bnc" id="L281" title="All 2 branches missed.">            if (i == 2) {</span>
+<span class="nc" id="L282">                this.rdBtnFrutas.setText(&quot;Frutas&quot;);</span>
             }
-<span class="nc bnc" id="L277" title="All 2 branches missed.">            if (i == 3) {</span>
-<span class="nc" id="L278">                this.rdBtnHarinas.setText(&quot;Harinas&quot;);</span>
+<span class="nc bnc" id="L284" title="All 2 branches missed.">            if (i == 3) {</span>
+<span class="nc" id="L285">                this.rdBtnHarinas.setText(&quot;Harinas&quot;);</span>
             }
-<span class="nc bnc" id="L280" title="All 2 branches missed.">            if (i == 4) {</span>
-<span class="nc" id="L281">                this.rdBtnVerduras.setText(&quot;Verduras&quot;);</span>
+<span class="nc bnc" id="L287" title="All 2 branches missed.">            if (i == 4) {</span>
+<span class="nc" id="L288">                this.rdBtnVerduras.setText(&quot;Verduras&quot;);</span>
             }
         }
-<span class="nc" id="L284">    }</span>
+<span class="nc" id="L291">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

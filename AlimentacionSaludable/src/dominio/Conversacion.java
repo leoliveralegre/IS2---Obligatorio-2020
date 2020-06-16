@@ -2,19 +2,20 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public final class Conversacion implements Serializable {
 
     private ArrayList<InformacionMensaje> listaMensajes;
-    public Persona usuario;
-    public Persona profesional;
+    private Persona usuario;
+    private Persona profesional;
     private boolean fueAtendidaConsulta;
 
-    public Conversacion(Persona user, Persona pr, ArrayList<InformacionMensaje> lista) {
+    public Conversacion(Persona user, Persona persona, List<InformacionMensaje> lista) {
         setUsuario(user);
-        setProfesional(pr);
-        setListaMensajes(lista);
+        setProfesional(persona);
+        setListaMensajes((ArrayList<InformacionMensaje>) lista);
         setFueAtendidaConsulta(false);
     }
 
@@ -26,15 +27,15 @@ public final class Conversacion implements Serializable {
         this.fueAtendidaConsulta = fueAtendida;
     }
 
-    public ArrayList<InformacionMensaje> getListaMensajes() {
+    public List<InformacionMensaje> getListaMensajes() {
         return this.listaMensajes;
     }
 
-    public void setListaMensajes(ArrayList<InformacionMensaje> lista) {
+    public void setListaMensajes(List<InformacionMensaje> lista) {
         if (lista == null || lista.isEmpty()) {
             this.listaMensajes = new ArrayList<>();
         } else {
-            this.listaMensajes = lista;
+            this.listaMensajes = (ArrayList<InformacionMensaje>) lista;
         }
     }
 
@@ -62,21 +63,35 @@ public final class Conversacion implements Serializable {
         }
     }
 
-    public boolean agregarMensaje(String mensaje, boolean intercambioRemitente) {
+    public void agregarMensaje(String mensaje, boolean intercambioRemitente) {
         InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);
         if (intercambioRemitente) {
             informacion.intercambiarRemitente();
         }
         listaMensajes.add(informacion);
-        boolean agregueMensaje = true;
-        return agregueMensaje;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+
+        if (this.getClass() != obj.getClass())
+            return false;
+        
         final Conversacion conversacionParametro = (Conversacion) obj;
         return getProfesional().equals(conversacionParametro.getProfesional())
                 && getUsuario().equals(conversacionParametro.getUsuario());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.listaMensajes);
+        hash = 97 * hash + Objects.hashCode(this.usuario);
+        hash = 97 * hash + Objects.hashCode(this.profesional);
+        hash = 97 * hash + (this.fueAtendidaConsulta ? 1 : 0);
+        return hash;
     }
 
     @Override

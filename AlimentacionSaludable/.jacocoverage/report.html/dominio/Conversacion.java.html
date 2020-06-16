@@ -2,92 +2,107 @@
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public final class Conversacion implements Serializable {
 
     private ArrayList&lt;InformacionMensaje&gt; listaMensajes;
-    public Persona usuario;
-    public Persona profesional;
+    private Persona usuario;
+    private Persona profesional;
     private boolean fueAtendidaConsulta;
 
-<span class="fc" id="L14">    public Conversacion(Persona user, Persona pr, ArrayList&lt;InformacionMensaje&gt; lista) {</span>
-<span class="fc" id="L15">        setUsuario(user);</span>
-<span class="fc" id="L16">        setProfesional(pr);</span>
-<span class="fc" id="L17">        setListaMensajes(lista);</span>
-<span class="fc" id="L18">        setFueAtendidaConsulta(false);</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L15">    public Conversacion(Persona user, Persona persona, List&lt;InformacionMensaje&gt; lista) {</span>
+<span class="fc" id="L16">        setUsuario(user);</span>
+<span class="fc" id="L17">        setProfesional(persona);</span>
+<span class="fc" id="L18">        setListaMensajes((ArrayList&lt;InformacionMensaje&gt;) lista);</span>
+<span class="fc" id="L19">        setFueAtendidaConsulta(false);</span>
+<span class="fc" id="L20">    }</span>
 
     public boolean getFueAtendidaConsulta() {
-<span class="fc" id="L22">        return fueAtendidaConsulta;</span>
+<span class="fc" id="L23">        return fueAtendidaConsulta;</span>
     }
 
     public void setFueAtendidaConsulta(boolean fueAtendida) {
-<span class="fc" id="L26">        this.fueAtendidaConsulta = fueAtendida;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L27">        this.fueAtendidaConsulta = fueAtendida;</span>
+<span class="fc" id="L28">    }</span>
 
-    public ArrayList&lt;InformacionMensaje&gt; getListaMensajes() {
-<span class="fc" id="L30">        return this.listaMensajes;</span>
+    public List&lt;InformacionMensaje&gt; getListaMensajes() {
+<span class="fc" id="L31">        return this.listaMensajes;</span>
     }
 
-    public void setListaMensajes(ArrayList&lt;InformacionMensaje&gt; lista) {
-<span class="fc bfc" id="L34" title="All 4 branches covered.">        if (lista == null || lista.isEmpty()) {</span>
-<span class="fc" id="L35">            this.listaMensajes = new ArrayList&lt;&gt;();</span>
+    public void setListaMensajes(List&lt;InformacionMensaje&gt; lista) {
+<span class="fc bfc" id="L35" title="All 4 branches covered.">        if (lista == null || lista.isEmpty()) {</span>
+<span class="fc" id="L36">            this.listaMensajes = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="fc" id="L37">            this.listaMensajes = lista;</span>
+<span class="fc" id="L38">            this.listaMensajes = (ArrayList&lt;InformacionMensaje&gt;) lista;</span>
         }
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L40">    }</span>
 
     public Persona getUsuario() {
-<span class="fc" id="L42">        return usuario;</span>
+<span class="fc" id="L43">        return usuario;</span>
     }
 
     public void setUsuario(Persona unUsuario) {
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (unUsuario == null) {</span>
-<span class="fc" id="L47">            this.usuario = new Usuario(null, null, null, null, null, null, null, null);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (unUsuario == null) {</span>
+<span class="fc" id="L48">            this.usuario = new Usuario(null, null, null, null, null, null, null, null);</span>
         } else {
-<span class="fc" id="L49">            this.usuario = unUsuario;</span>
+<span class="fc" id="L50">            this.usuario = unUsuario;</span>
         }
-<span class="fc" id="L51">    }</span>
+<span class="fc" id="L52">    }</span>
 
     public Persona getProfesional() {
-<span class="fc" id="L54">        return this.profesional;</span>
+<span class="fc" id="L55">        return this.profesional;</span>
     }
 
     public void setProfesional(Persona unProfesional) {
-<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (unProfesional == null) {</span>
-<span class="fc" id="L59">            this.profesional = new Profesional(null, null, null, null, null, null, null);</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (unProfesional == null) {</span>
+<span class="fc" id="L60">            this.profesional = new Profesional(null, null, null, null, null, null, null);</span>
         } else {
-<span class="fc" id="L61">            this.profesional = unProfesional;</span>
+<span class="fc" id="L62">            this.profesional = unProfesional;</span>
         }
-<span class="fc" id="L63">    }</span>
+<span class="fc" id="L64">    }</span>
 
-    public boolean agregarMensaje(String mensaje, boolean intercambioRemitente) {
-<span class="fc" id="L66">        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);</span>
-<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (intercambioRemitente) {</span>
-<span class="fc" id="L68">            informacion.intercambiarRemitente();</span>
+    public void agregarMensaje(String mensaje, boolean intercambioRemitente) {
+<span class="fc" id="L67">        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (intercambioRemitente) {</span>
+<span class="fc" id="L69">            informacion.intercambiarRemitente();</span>
         }
-<span class="fc" id="L70">        listaMensajes.add(informacion);</span>
-<span class="fc" id="L71">        boolean agregueMensaje = true;</span>
-<span class="fc" id="L72">        return agregueMensaje;</span>
-    }
+<span class="fc" id="L71">        listaMensajes.add(informacion);</span>
+<span class="fc" id="L72">    }</span>
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L77">        final Conversacion conversacionParametro = (Conversacion) obj;</span>
-<span class="fc bfc" id="L78" title="All 2 branches covered.">        return getProfesional().equals(conversacionParametro.getProfesional())</span>
-<span class="fc bfc" id="L79" title="All 2 branches covered.">                &amp;&amp; getUsuario().equals(conversacionParametro.getUsuario());</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        if (obj == null)</span>
+<span class="nc" id="L77">            return false;</span>
+
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">        if (this.getClass() != obj.getClass())</span>
+<span class="nc" id="L80">            return false;</span>
+        
+<span class="fc" id="L82">        final Conversacion conversacionParametro = (Conversacion) obj;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        return getProfesional().equals(conversacionParametro.getProfesional())</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">                &amp;&amp; getUsuario().equals(conversacionParametro.getUsuario());</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L89">        int hash = 3;</span>
+<span class="nc" id="L90">        hash = 97 * hash + Objects.hashCode(this.listaMensajes);</span>
+<span class="nc" id="L91">        hash = 97 * hash + Objects.hashCode(this.usuario);</span>
+<span class="nc" id="L92">        hash = 97 * hash + Objects.hashCode(this.profesional);</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        hash = 97 * hash + (this.fueAtendidaConsulta ? 1 : 0);</span>
+<span class="nc" id="L94">        return hash;</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L84">        String retorno = &quot;No hay mensajes para mostrar&quot;;</span>
-<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (!getListaMensajes().isEmpty()) {</span>
-<span class="fc" id="L86">            retorno = &quot;&quot;;</span>
-<span class="fc" id="L87">            retorno = listaMensajes.stream().map((InformacionMensaje info) -&gt; &quot;\n&quot; + info.getRemitente() + &quot;\n&quot;</span>
-<span class="fc" id="L88">                    + info.getMensaje() + &quot;\n&quot;).reduce(retorno, String::concat);</span>
+<span class="fc" id="L99">        String retorno = &quot;No hay mensajes para mostrar&quot;;</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        if (!getListaMensajes().isEmpty()) {</span>
+<span class="fc" id="L101">            retorno = &quot;&quot;;</span>
+<span class="fc" id="L102">            retorno = listaMensajes.stream().map((InformacionMensaje info) -&gt; &quot;\n&quot; + info.getRemitente() + &quot;\n&quot;</span>
+<span class="fc" id="L103">                    + info.getMensaje() + &quot;\n&quot;).reduce(retorno, String::concat);</span>
         }
-<span class="fc" id="L90">        return retorno;</span>
+<span class="fc" id="L105">        return retorno;</span>
     }
 
 }

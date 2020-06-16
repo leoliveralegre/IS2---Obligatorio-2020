@@ -426,31 +426,31 @@ public class SistemaTest {
     @Test
     public void testEnumPreferenciasCarnesBlancas() {
         String resultadoEsperado = "CarnesBlancas";
-        assertEquals(Preferencias.CarnesBlancas.name(), resultadoEsperado);
+        assertEquals(Preferencias.CARNES_BLANCAS.name(), resultadoEsperado);
     }
 
     @Test
     public void testEnumPreferenciasCarnesRojas() {
         String resultadoEsperado = "CarnesRojas";
-        assertEquals(Preferencias.CarnesRojas.name(), resultadoEsperado);
+        assertEquals(Preferencias.CARNES_ROJAS.name(), resultadoEsperado);
     }
 
     @Test
     public void testEnumPreferenciasVerduras() {
         String resultadoEsperado = "Verduras";
-        assertEquals(Preferencias.Verduras.name(), resultadoEsperado);
+        assertEquals(Preferencias.VERDURAS.name(), resultadoEsperado);
     }
 
     @Test
     public void testEnumPreferenciasFrutas() {
         String resultadoEsperado = "Frutas";
-        assertEquals(Preferencias.Frutas.name(), resultadoEsperado);
+        assertEquals(Preferencias.FRUTAS.name(), resultadoEsperado);
     }
 
     @Test
     public void testEnumPreferenciasHarinas() {
         String resultadoEsperado = "Harinas";
-        assertEquals(Preferencias.Harinas.name(), resultadoEsperado);
+        assertEquals(Preferencias.HARINAS.name(), resultadoEsperado);
     }
 
     @Test

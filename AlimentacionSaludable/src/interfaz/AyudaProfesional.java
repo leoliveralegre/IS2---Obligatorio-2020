@@ -1,6 +1,9 @@
 package interfaz;
 
 import dominio.Sistema;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AyudaProfesional extends javax.swing.JDialog {
 
@@ -170,7 +173,11 @@ public class AyudaProfesional extends javax.swing.JDialog {
     }//GEN-LAST:event_btnIngresarAlimentoIngerido2ActionPerformed
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(AyudaProfesional.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarSistemaActionPerformed
 

@@ -1,0 +1,6 @@
+projectKey=java-sonar-runner-simple
+serverUrl=http://192.168.99.100:9000
+serverVersion=7.5.0.20543
+dashboardUrl=http://192.168.99.100:9000/dashboard?id=java-sonar-runner-simple
+ceTaskId=AXK7H6IoulD8I8NMX9qm
+ceTaskUrl=http://192.168.99.100:9000/api/ce/task?id=AXK7H6IoulD8I8NMX9qm

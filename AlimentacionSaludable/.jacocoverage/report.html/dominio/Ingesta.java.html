@@ -3,57 +3,70 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Arrays;
 
 public final class Ingesta implements Serializable {
 
-    public String fechaDeIngesta;
+    private String fechaDeIngesta;
     private ArrayList&lt;Alimento&gt; listaAlimentosPorFecha;
 
-<span class="fc" id="L13">    public Ingesta(String f, ArrayList&lt;Alimento&gt; LA) {</span>
-<span class="fc" id="L14">        setFechaDeIngesta(f);</span>
-<span class="fc" id="L15">        setLAPF(LA);</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L12">    public Ingesta(String f, ArrayList&lt;Alimento&gt; LA) {</span>
+<span class="fc" id="L13">        setFechaDeIngesta(f);</span>
+<span class="fc" id="L14">        setLAPF(LA);</span>
+<span class="fc" id="L15">    }</span>
 
     public String getFechaDeIngesta() {
-<span class="fc" id="L19">        return this.fechaDeIngesta;</span>
+<span class="fc" id="L18">        return this.fechaDeIngesta;</span>
     }
 
     public void setFechaDeIngesta(String unaFecha) {
-<span class="fc" id="L23">        this.fechaDeIngesta = unaFecha;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L22">        this.fechaDeIngesta = unaFecha;</span>
+<span class="fc" id="L23">    }</span>
 
     public ArrayList&lt;Alimento&gt; getListaAlimentosPorFecha() {
-<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (this.listaAlimentosPorFecha.isEmpty()) {</span>
-<span class="fc" id="L28">            return new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (this.listaAlimentosPorFecha.isEmpty()) {</span>
+<span class="fc" id="L27">            return new ArrayList&lt;&gt;();</span>
         } else {
-<span class="fc" id="L30">            return this.listaAlimentosPorFecha;</span>
+<span class="fc" id="L29">            return this.listaAlimentosPorFecha;</span>
         }
     }
 
     public void setLAPF(ArrayList&lt;Alimento&gt; list) {
-<span class="fc bfc" id="L35" title="All 4 branches covered.">        if (list == null || list.isEmpty()) {</span>
-<span class="fc" id="L36">            this.listaAlimentosPorFecha = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">        if (list == null || list.isEmpty()) {</span>
+<span class="fc" id="L35">            this.listaAlimentosPorFecha = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="fc" id="L38">            this.listaAlimentosPorFecha = list;</span>
+<span class="fc" id="L37">            this.listaAlimentosPorFecha = list;</span>
         }
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L39">    }</span>
 
     @Override
     public String toString() {
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (this.listaAlimentosPorFecha.isEmpty()) {</span>
-<span class="nc" id="L45">            return &quot;No hay alimentos ingeridos&quot;;</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (this.listaAlimentosPorFecha.isEmpty()) {</span>
+<span class="nc" id="L44">            return &quot;No hay alimentos ingeridos&quot;;</span>
         } else {
-<span class="fc" id="L47">            return &quot;Lista de alimentos ingeridos&quot; + this.getListaAlimentosPorFecha();</span>
+<span class="fc" id="L46">            return &quot;Lista de alimentos ingeridos&quot; + this.getListaAlimentosPorFecha();</span>
         }
     }
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L53">        Ingesta otraIngesta = (Ingesta) obj;</span>
-<span class="fc" id="L54">        boolean sonIguales = this.getFechaDeIngesta().equals(otraIngesta.getFechaDeIngesta());</span>
-<span class="pc bpc" id="L55" title="1 of 4 branches missed.">        sonIguales = sonIguales &amp;&amp; this.getListaAlimentosPorFecha().equals(otraIngesta.getListaAlimentosPorFecha());</span>
-<span class="fc" id="L56">        return sonIguales;</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if (obj == null)</span>
+<span class="nc" id="L53">            return false;</span>
+
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        if (this.getClass() != obj.getClass())</span>
+<span class="nc" id="L56">            return false;</span>
+        
+<span class="fc" id="L58">        final Ingesta otraIngesta = (Ingesta) obj;</span>
+<span class="fc" id="L59">        boolean sonIguales = this.getFechaDeIngesta().equals(otraIngesta.getFechaDeIngesta());</span>
+<span class="pc bpc" id="L60" title="1 of 4 branches missed.">        sonIguales = sonIguales &amp;&amp; this.getListaAlimentosPorFecha().equals(otraIngesta.getListaAlimentosPorFecha());</span>
+<span class="fc" id="L61">        return sonIguales;</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L66">        int hash = 5;</span>
+<span class="nc" id="L67">        hash = 97 * hash + Objects.hashCode(this.fechaDeIngesta);</span>
+<span class="nc" id="L68">        hash = 97 * hash + Objects.hashCode(this.listaAlimentosPorFecha);</span>
+<span class="nc" id="L69">        return hash;</span>
     }
 
 }

@@ -6,10 +6,13 @@ import dominio.PlanAlimentacion;
 import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 
@@ -1441,7 +1444,11 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEditarPreferenciasActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowClosing
 
     private void btnEditarRestriccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRestriccionesActionPerformed
@@ -1535,27 +1542,47 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnCerrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuarioActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuarioActionPerformed
 
     private void btnCerrarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuario1ActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuario1ActionPerformed
 
     private void btnCerrarUsuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuario2ActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuario2ActionPerformed
 
     private void btnCerrarUsuario7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuario7ActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuario7ActionPerformed
 
     private void btnCerrarUsuario6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarUsuario6ActionPerformed
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaMenuPrincipalUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_btnCerrarUsuario6ActionPerformed
 

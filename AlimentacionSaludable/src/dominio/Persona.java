@@ -1,15 +1,18 @@
 package dominio;
 
-import java.util.Objects;
 import java.io.Serializable;
+import java.util.Objects;
 import javax.swing.ImageIcon;
 
 public abstract class Persona implements Serializable {
 
+    private static final String NOMBRE_NO_INGRESADO = "Nombre no ingresado";
+    private static final String APELLIDO_NO_INGRESADO = "Apellido no ingresado";
+    
     private String nombre;
     private String apellido;
     private String fechaNacimiento;
-    public ImageIcon fotoDePerfil;
+    private ImageIcon fotoDePerfil;
 
     public String getNombre() {
         return this.nombre;
@@ -25,7 +28,7 @@ public abstract class Persona implements Serializable {
 
     public void setApellido(String unApellido) {
         if (unApellido == null || unApellido.isEmpty()) {
-            this.apellido = "Apellido no ingresado";
+            this.apellido = APELLIDO_NO_INGRESADO;
         } else {
             this.apellido = unApellido;
         }
@@ -57,11 +60,11 @@ public abstract class Persona implements Serializable {
 
     public String getNombreCompleto() {
         String retorno;
-        if (getNombre().equals("Nombre no ingresado") && getApellido().equals("Apellido no ingresado")) {
-            retorno = "Nombre no ingresado";
-        } else if (getNombre().equals("Nombre no ingresado")) {
+        if (getNombre().equals(NOMBRE_NO_INGRESADO) && getApellido().equals(APELLIDO_NO_INGRESADO)) {
+            retorno = NOMBRE_NO_INGRESADO;
+        } else if (getNombre().equals(NOMBRE_NO_INGRESADO)) {
             retorno = getApellido();
-        } else if (getApellido().equals("Apellido no ingresado")) {
+        } else if (getApellido().equals(APELLIDO_NO_INGRESADO)) {
             retorno = getNombre();
         } else {
             retorno = getNombre() + " " + getApellido();
@@ -76,7 +79,22 @@ public abstract class Persona implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        Persona otraPersona = (Persona) obj;
+        if (obj == null)
+            return false;
+
+        if (this.getClass() != obj.getClass())
+            return false;
+        final Persona otraPersona = (Persona) obj;
         return this.getNombreCompleto().equals(otraPersona.getNombreCompleto());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.nombre);
+        hash = 37 * hash + Objects.hashCode(this.apellido);
+        hash = 37 * hash + Objects.hashCode(this.fechaNacimiento);
+        hash = 37 * hash + Objects.hashCode(this.fotoDePerfil);
+        return hash;
     }
 }

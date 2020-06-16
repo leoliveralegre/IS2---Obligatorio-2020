@@ -2,7 +2,10 @@ package interfaz;
 
 import dominio.Sistema;
 import dominio.Usuario;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VentanaEditarPreferencias extends javax.swing.JDialog {
 
@@ -217,7 +220,11 @@ public class VentanaEditarPreferencias extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEditarPreferenciasActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaEditarPreferencias.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowClosing
 
     private void rdBtnVerdurasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtnVerdurasActionPerformed
@@ -259,11 +266,11 @@ public class VentanaEditarPreferencias extends javax.swing.JDialog {
 
    private void cargarListaPreferencias() {
         Sistema.Preferencias[] listaPreferencias = new Sistema.Preferencias[5];
-        listaPreferencias[0] = Sistema.Preferencias.CarnesBlancas;
-        listaPreferencias[1] = Sistema.Preferencias.CarnesRojas;
-        listaPreferencias[2] = Sistema.Preferencias.Frutas;
-        listaPreferencias[3] = Sistema.Preferencias.Harinas;
-        listaPreferencias[4] = Sistema.Preferencias.Verduras;
+        listaPreferencias[0] = Sistema.Preferencias.CARNES_BLANCAS;
+        listaPreferencias[1] = Sistema.Preferencias.CARNES_ROJAS;
+        listaPreferencias[2] = Sistema.Preferencias.FRUTAS;
+        listaPreferencias[3] = Sistema.Preferencias.HARINAS;
+        listaPreferencias[4] = Sistema.Preferencias.VERDURAS;
         for (int i = 0; i < listaPreferencias.length; i++) {
             if (i == 0) {
                 this.rdBtnCarnesRojas.setText("Carnes Rojas");

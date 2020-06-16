@@ -2,7 +2,10 @@ package interfaz;
 
 import dominio.Sistema;
 import dominio.Usuario;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VentanaEditarRestricciones extends javax.swing.JDialog {
 
@@ -197,7 +200,11 @@ public class VentanaEditarRestricciones extends javax.swing.JDialog {
     }//GEN-LAST:event_rdBtnVeganoActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.sistema.guardarDatosSistema();
+        try {
+            this.sistema.guardarDatosSistema();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaEditarRestricciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowClosing
 
     void agregarRestriccionesUsuario(ArrayList<String> restricciones) {
