@@ -19,7 +19,7 @@ public final class Conversacion implements Serializable {
 <span class="fc" id="L19">    }</span>
 
     public boolean getFueAtendidaConsulta() {
-<span class="nc" id="L22">        return fueAtendidaConsulta;</span>
+<span class="fc" id="L22">        return fueAtendidaConsulta;</span>
     }
 
     public void setFueAtendidaConsulta(boolean fueAtendida) {
@@ -31,15 +31,15 @@ public final class Conversacion implements Serializable {
     }
 
     public void setListaMensajes(ArrayList&lt;InformacionMensaje&gt; lista) {
-<span class="pc bpc" id="L34" title="1 of 4 branches missed.">        if (lista == null || lista.isEmpty()) {</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">        if (lista == null || lista.isEmpty()) {</span>
 <span class="fc" id="L35">            this.listaMensajes = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="nc" id="L37">            this.listaMensajes = lista;</span>
+<span class="fc" id="L37">            this.listaMensajes = lista;</span>
         }
 <span class="fc" id="L39">    }</span>
 
     public Persona getUsuario() {
-<span class="nc" id="L42">        return usuario;</span>
+<span class="fc" id="L42">        return usuario;</span>
     }
 
     public void setUsuario(Persona unUsuario) {
@@ -51,7 +51,7 @@ public final class Conversacion implements Serializable {
 <span class="fc" id="L51">    }</span>
 
     public Persona getProfesional() {
-<span class="nc" id="L54">        return this.profesional;</span>
+<span class="fc" id="L54">        return this.profesional;</span>
     }
 
     public void setProfesional(Persona unProfesional) {
@@ -63,29 +63,29 @@ public final class Conversacion implements Serializable {
 <span class="fc" id="L63">    }</span>
 
     public boolean agregarMensaje(String mensaje, boolean intercambioRemitente) {
-<span class="nc" id="L66">        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);</span>
-<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (intercambioRemitente) {</span>
-<span class="nc" id="L68">            informacion.intercambiarRemitente();</span>
+<span class="fc" id="L66">        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (intercambioRemitente) {</span>
+<span class="fc" id="L68">            informacion.intercambiarRemitente();</span>
         }
-<span class="nc" id="L70">        listaMensajes.add(informacion);</span>
-<span class="nc" id="L71">        boolean agregueMensaje = true;</span>
-<span class="nc" id="L72">        return agregueMensaje;</span>
+<span class="fc" id="L70">        listaMensajes.add(informacion);</span>
+<span class="fc" id="L71">        boolean agregueMensaje = true;</span>
+<span class="fc" id="L72">        return agregueMensaje;</span>
     }
 
     @Override
     public boolean equals(Object obj) {
-<span class="nc" id="L77">        final Conversacion conversacionParametro = (Conversacion) obj;</span>
-<span class="nc bnc" id="L78" title="All 2 branches missed.">        return getProfesional().equals(conversacionParametro.getProfesional())</span>
-<span class="nc bnc" id="L79" title="All 2 branches missed.">                &amp;&amp; getUsuario().equals(conversacionParametro.getUsuario());</span>
+<span class="fc" id="L77">        final Conversacion conversacionParametro = (Conversacion) obj;</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        return getProfesional().equals(conversacionParametro.getProfesional())</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">                &amp;&amp; getUsuario().equals(conversacionParametro.getUsuario());</span>
     }
 
     @Override
     public String toString() {
 <span class="fc" id="L84">        String retorno = &quot;No hay mensajes para mostrar&quot;;</span>
-<span class="pc bpc" id="L85" title="1 of 2 branches missed.">        if (!getListaMensajes().isEmpty()) {</span>
-<span class="nc" id="L86">            retorno = &quot;&quot;;</span>
-<span class="nc" id="L87">            retorno = listaMensajes.stream().map((InformacionMensaje info) -&gt; &quot;\n&quot; + info.getRemitente() + &quot;\n&quot;</span>
-<span class="nc" id="L88">                    + info.getMensaje() + &quot;\n&quot;).reduce(retorno, String::concat);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (!getListaMensajes().isEmpty()) {</span>
+<span class="fc" id="L86">            retorno = &quot;&quot;;</span>
+<span class="fc" id="L87">            retorno = listaMensajes.stream().map((InformacionMensaje info) -&gt; &quot;\n&quot; + info.getRemitente() + &quot;\n&quot;</span>
+<span class="fc" id="L88">                    + info.getMensaje() + &quot;\n&quot;).reduce(retorno, String::concat);</span>
         }
 <span class="fc" id="L90">        return retorno;</span>
     }

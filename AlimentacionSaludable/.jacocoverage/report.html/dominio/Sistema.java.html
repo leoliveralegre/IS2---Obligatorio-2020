@@ -51,8 +51,8 @@ public final class Sistema implements Serializable {
 <span class="fc" id="L51">        return personaLogueada;</span>
     }
 
-    public void setPersonaLogueada(Persona personaLogueada) {
-<span class="fc" id="L55">        personaLogueada = personaLogueada;</span>
+    public void setPersonaLogueada(Persona personaL) {
+<span class="fc" id="L55">        personaLogueada = personaL;</span>
         
 <span class="fc" id="L57">    }</span>
 
@@ -124,10 +124,10 @@ public final class Sistema implements Serializable {
 <span class="fc" id="L124">        Diabetes, Veganismo, IntoleranciaLactosa, Celiaquia;</span>
     }
 
-<span class="nc" id="L127">    public enum Paises {</span>
-<span class="nc" id="L128">        Argentina, Bolivia, Brasil, Chile, Colombia, CostaRica, Cuba, Ecuador, ElSalvador,</span>
-<span class="nc" id="L129">        GuayanaFrancesa, Granada, Guatemala, Guayana, Haití, Honduras, Jamaica,</span>
-<span class="nc" id="L130">        México, Nicaragua, Paraguay, Panamá, Perú, PuertoRico, RepúblicaDominicana, Surinam, Uruguay, Venezuela;</span>
+<span class="pc" id="L127">    public enum Paises {</span>
+<span class="fc" id="L128">        Argentina, Bolivia, Brasil, Chile, Colombia, CostaRica, Cuba, Ecuador, ElSalvador,</span>
+<span class="fc" id="L129">        GuayanaFrancesa, Granada, Guatemala, Guayana, Haití, Honduras, Jamaica,</span>
+<span class="fc" id="L130">        México, Nicaragua, Paraguay, Panamá, Perú, PuertoRico, RepúblicaDominicana, Surinam, Uruguay, Venezuela;</span>
     }
 
 <span class="pc" id="L133">    public enum DiasDeLaSemana {</span>
@@ -139,34 +139,34 @@ public final class Sistema implements Serializable {
     }
 
     public ArrayList&lt;String&gt; devolverListaPaises() {
-<span class="nc" id="L142">        ArrayList&lt;String&gt; lstNacionalidades = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L143">        lstNacionalidades.add(Paises.Argentina.toString());</span>
-<span class="nc" id="L144">        lstNacionalidades.add(Paises.Bolivia.toString());</span>
-<span class="nc" id="L145">        lstNacionalidades.add(Paises.Brasil.toString());</span>
-<span class="nc" id="L146">        lstNacionalidades.add(Paises.Chile.toString());</span>
-<span class="nc" id="L147">        lstNacionalidades.add(Paises.Colombia.toString());</span>
-<span class="nc" id="L148">        lstNacionalidades.add(&quot;Costa Rica&quot;);</span>
-<span class="nc" id="L149">        lstNacionalidades.add(Paises.Cuba.toString());</span>
-<span class="nc" id="L150">        lstNacionalidades.add(Paises.Ecuador.toString());</span>
-<span class="nc" id="L151">        lstNacionalidades.add(&quot;El Salvador&quot;);</span>
-<span class="nc" id="L152">        lstNacionalidades.add(&quot;Guayana Francesa&quot;);</span>
-<span class="nc" id="L153">        lstNacionalidades.add(Paises.Granada.toString());</span>
-<span class="nc" id="L154">        lstNacionalidades.add(Paises.Guatemala.toString());</span>
-<span class="nc" id="L155">        lstNacionalidades.add(Paises.Guayana.toString());</span>
-<span class="nc" id="L156">        lstNacionalidades.add(Paises.Haití.toString());</span>
-<span class="nc" id="L157">        lstNacionalidades.add(Paises.Honduras.toString());</span>
-<span class="nc" id="L158">        lstNacionalidades.add(Paises.Jamaica.toString());</span>
-<span class="nc" id="L159">        lstNacionalidades.add(Paises.México.toString());</span>
-<span class="nc" id="L160">        lstNacionalidades.add(Paises.Nicaragua.toString());</span>
-<span class="nc" id="L161">        lstNacionalidades.add(Paises.Paraguay.toString());</span>
-<span class="nc" id="L162">        lstNacionalidades.add(Paises.Panamá.toString());</span>
-<span class="nc" id="L163">        lstNacionalidades.add(Paises.Perú.toString());</span>
-<span class="nc" id="L164">        lstNacionalidades.add(&quot;Puerto Rico&quot;);</span>
-<span class="nc" id="L165">        lstNacionalidades.add(&quot;República Dominicana&quot;);</span>
-<span class="nc" id="L166">        lstNacionalidades.add(Paises.Surinam.toString());</span>
-<span class="nc" id="L167">        lstNacionalidades.add(Paises.Uruguay.toString());</span>
-<span class="nc" id="L168">        lstNacionalidades.add(Paises.Venezuela.toString());</span>
-<span class="nc" id="L169">        return lstNacionalidades;</span>
+<span class="fc" id="L142">        ArrayList&lt;String&gt; lstNacionalidades = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L143">        lstNacionalidades.add(Paises.Argentina.toString());</span>
+<span class="fc" id="L144">        lstNacionalidades.add(Paises.Bolivia.toString());</span>
+<span class="fc" id="L145">        lstNacionalidades.add(Paises.Brasil.toString());</span>
+<span class="fc" id="L146">        lstNacionalidades.add(Paises.Chile.toString());</span>
+<span class="fc" id="L147">        lstNacionalidades.add(Paises.Colombia.toString());</span>
+<span class="fc" id="L148">        lstNacionalidades.add(&quot;Costa Rica&quot;);</span>
+<span class="fc" id="L149">        lstNacionalidades.add(Paises.Cuba.toString());</span>
+<span class="fc" id="L150">        lstNacionalidades.add(Paises.Ecuador.toString());</span>
+<span class="fc" id="L151">        lstNacionalidades.add(&quot;El Salvador&quot;);</span>
+<span class="fc" id="L152">        lstNacionalidades.add(&quot;Guayana Francesa&quot;);</span>
+<span class="fc" id="L153">        lstNacionalidades.add(Paises.Granada.toString());</span>
+<span class="fc" id="L154">        lstNacionalidades.add(Paises.Guatemala.toString());</span>
+<span class="fc" id="L155">        lstNacionalidades.add(Paises.Guayana.toString());</span>
+<span class="fc" id="L156">        lstNacionalidades.add(Paises.Haití.toString());</span>
+<span class="fc" id="L157">        lstNacionalidades.add(Paises.Honduras.toString());</span>
+<span class="fc" id="L158">        lstNacionalidades.add(Paises.Jamaica.toString());</span>
+<span class="fc" id="L159">        lstNacionalidades.add(Paises.México.toString());</span>
+<span class="fc" id="L160">        lstNacionalidades.add(Paises.Nicaragua.toString());</span>
+<span class="fc" id="L161">        lstNacionalidades.add(Paises.Paraguay.toString());</span>
+<span class="fc" id="L162">        lstNacionalidades.add(Paises.Panamá.toString());</span>
+<span class="fc" id="L163">        lstNacionalidades.add(Paises.Perú.toString());</span>
+<span class="fc" id="L164">        lstNacionalidades.add(&quot;Puerto Rico&quot;);</span>
+<span class="fc" id="L165">        lstNacionalidades.add(&quot;República Dominicana&quot;);</span>
+<span class="fc" id="L166">        lstNacionalidades.add(Paises.Surinam.toString());</span>
+<span class="fc" id="L167">        lstNacionalidades.add(Paises.Uruguay.toString());</span>
+<span class="fc" id="L168">        lstNacionalidades.add(Paises.Venezuela.toString());</span>
+<span class="fc" id="L169">        return lstNacionalidades;</span>
     }
 
     public ArrayList&lt;String&gt; devolverListaDiasDeLaSemana() {
@@ -219,9 +219,9 @@ public final class Sistema implements Serializable {
     }
 
     public boolean crearProfesional(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoPerfil, String tituloProfesional, String fechaGraduacion, String paisGraduacion) {
-<span class="nc" id="L222">        Profesional profesionalNuevo = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil, tituloProfesional, fechaGraduacion, paisGraduacion);</span>
-<span class="nc" id="L223">        boolean fueAgregadoProfesional = agregarProfesionalALaLista(profesionalNuevo);</span>
-<span class="nc" id="L224">        return fueAgregadoProfesional;</span>
+<span class="fc" id="L222">        Profesional profesionalNuevo = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil, tituloProfesional, fechaGraduacion, paisGraduacion);</span>
+<span class="fc" id="L223">        boolean fueAgregadoProfesional = agregarProfesionalALaLista(profesionalNuevo);</span>
+<span class="fc" id="L224">        return fueAgregadoProfesional;</span>
     }
 
     public boolean agregarProfesionalALaLista(Profesional profesionalARegistrar) {
@@ -234,15 +234,15 @@ public final class Sistema implements Serializable {
 
     public boolean crearAlimento(String nombre, String tipoAlimento, ArrayList&lt;ComposicionAlimento&gt; listaNutrientesConProporcion, ImageIcon fotoDelAlimento) {
         Alimento an;
-<span class="nc" id="L237">        an = new Alimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDelAlimento);</span>
-<span class="nc" id="L238">        boolean fueAgregadoAlimento = agregarAlimentoALaLista(an);</span>
-<span class="nc" id="L239">        return fueAgregadoAlimento;</span>
+<span class="fc" id="L237">        an = new Alimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDelAlimento);</span>
+<span class="fc" id="L238">        boolean fueAgregadoAlimento = agregarAlimentoALaLista(an);</span>
+<span class="fc" id="L239">        return fueAgregadoAlimento;</span>
     }
 
     public boolean agregarAlimentoALaLista(Alimento alimentoAAgregar) {
-<span class="nc bnc" id="L243" title="All 4 branches missed.">        if (alimentoAAgregar != null &amp;&amp; !getListaAlimentos().contains(alimentoAAgregar)) {</span>
-<span class="nc" id="L244">            getListaAlimentos().add(alimentoAAgregar);</span>
-<span class="nc" id="L245">            return true;</span>
+<span class="pc bpc" id="L243" title="2 of 4 branches missed.">        if (alimentoAAgregar != null &amp;&amp; !getListaAlimentos().contains(alimentoAAgregar)) {</span>
+<span class="fc" id="L244">            getListaAlimentos().add(alimentoAAgregar);</span>
+<span class="fc" id="L245">            return true;</span>
         }
 <span class="nc" id="L247">        return false;</span>
     }
@@ -314,16 +314,16 @@ public final class Sistema implements Serializable {
     }
 
     public String getConversacion(String nombreCompletoProfesional, String nombreCompletoUsuario) {
-<span class="nc" id="L317">        String retorno = &quot;No hay conversación disponible.&quot;;</span>
-<span class="nc bnc" id="L318" title="All 2 branches missed.">        for (int i = 0; i &lt; getListaConversaciones().size(); i++) {</span>
-<span class="nc" id="L319">            Conversacion conversacionActual = getListaConversaciones().get(i);</span>
-<span class="nc" id="L320">            String nombreCompletoProfesionalActual = conversacionActual.getProfesional().getNombreCompleto();</span>
-<span class="nc" id="L321">            String nombreUsuarioActual = conversacionActual.getUsuario().getNombreCompleto();</span>
-<span class="nc bnc" id="L322" title="All 4 branches missed.">            if (nombreCompletoProfesionalActual.equals(nombreCompletoProfesional) &amp;&amp; nombreUsuarioActual.equals(nombreCompletoUsuario)) {</span>
-<span class="nc" id="L323">                return conversacionActual.toString();</span>
+<span class="fc" id="L317">        String retorno = &quot;No hay conversación disponible.&quot;;</span>
+<span class="fc bfc" id="L318" title="All 2 branches covered.">        for (int i = 0; i &lt; getListaConversaciones().size(); i++) {</span>
+<span class="fc" id="L319">            Conversacion conversacionActual = getListaConversaciones().get(i);</span>
+<span class="fc" id="L320">            String nombreCompletoProfesionalActual = conversacionActual.getProfesional().getNombreCompleto();</span>
+<span class="fc" id="L321">            String nombreUsuarioActual = conversacionActual.getUsuario().getNombreCompleto();</span>
+<span class="fc bfc" id="L322" title="All 4 branches covered.">            if (nombreCompletoProfesionalActual.equals(nombreCompletoProfesional) &amp;&amp; nombreUsuarioActual.equals(nombreCompletoUsuario)) {</span>
+<span class="fc" id="L323">                return conversacionActual.toString();</span>
             }
         }
-<span class="nc" id="L326">        return retorno;</span>
+<span class="fc" id="L326">        return retorno;</span>
     }
 
     public boolean agregarMensajeConversacion(String remitente, String destinatario, String mensaje, boolean intercambioRemitente, boolean consultaRespondida) {

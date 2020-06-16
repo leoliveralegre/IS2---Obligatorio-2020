@@ -15,7 +15,6 @@ public class SistemaTest {
 
     }
 
-
     @Test
     public void testGetsSetsNullListaAlimentos() {
         ArrayList<Usuario> listaUsuarios = null;
@@ -485,6 +484,12 @@ public class SistemaTest {
     }
 
     @Test
+    public void testEnumPaises() {
+        String resultadoEsperado = "Argentina";
+        assertEquals(resultadoEsperado, Paises.Argentina.name());
+    }
+
+    @Test
     public void testEnumDiasSemanaViernes() {
         String resultadoEsperado = "Viernes";
         assertEquals(DiasDeLaSemana.Viernes.name(), resultadoEsperado);
@@ -548,7 +553,6 @@ public class SistemaTest {
         assertEquals(sistemaATestear.devolverListaIngestasDeLaSemana(), listaEsperada);
     }
 
-
     @Test
     public void testEnumDevolverListaDiasDeLaSemana() {
         Sistema sistemaATestear = new Sistema();
@@ -563,4 +567,128 @@ public class SistemaTest {
         assertEquals(sistemaATestear.devolverListaDiasDeLaSemana(), listaEsperada);
     }
 
+    @Test
+    public void TestEnumDevolverListaPaises() {
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaPaises = new ArrayList<>();
+        listaPaises.add(Paises.Argentina.toString());
+        listaPaises.add(Paises.Bolivia.toString());
+        listaPaises.add(Paises.Brasil.toString());
+        listaPaises.add(Paises.Chile.toString());
+        listaPaises.add(Paises.Colombia.toString());
+        listaPaises.add("Costa Rica");
+        listaPaises.add(Paises.Cuba.toString());
+        listaPaises.add(Paises.Ecuador.toString());
+        listaPaises.add("El Salvador");
+        listaPaises.add("Guayana Francesa");
+        listaPaises.add(Paises.Granada.toString());
+        listaPaises.add(Paises.Guatemala.toString());
+        listaPaises.add(Paises.Guayana.toString());
+        listaPaises.add(Paises.Haití.toString());
+        listaPaises.add(Paises.Honduras.toString());
+        listaPaises.add(Paises.Jamaica.toString());
+        listaPaises.add(Paises.México.toString());
+        listaPaises.add(Paises.Nicaragua.toString());
+        listaPaises.add(Paises.Paraguay.toString());
+        listaPaises.add(Paises.Panamá.toString());
+        listaPaises.add(Paises.Perú.toString());
+        listaPaises.add("Puerto Rico");
+        listaPaises.add("República Dominicana");
+        listaPaises.add(Paises.Surinam.toString());
+        listaPaises.add(Paises.Uruguay.toString());
+        listaPaises.add(Paises.Venezuela.toString());
+        assertEquals(listaPaises, sistemaATestear.devolverListaPaises());
+    }
+
+    @Test
+    public void testCrearProfesional() {
+        Sistema sistemaATestear = new Sistema();
+        assertTrue(sistemaATestear.crearProfesional("Prueba", "Apellido", "14/08/92", null, "Estudiante", "16/06/2020", "Uruguay"));
+    }
+
+    @Test
+    public void testCrearAlimento() {
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<ComposicionAlimento> listaNutrientesConProporcion = new ArrayList();
+        assertTrue(sistemaATestear.crearAlimento("Nombre", "Alimento", listaNutrientesConProporcion, null));
+
+    }
+
+    @Test
+    public void testGetConversacion() {
+        Sistema sistemaATestear = new Sistema();
+        assertEquals("No hay conversación disponible.", sistemaATestear.getConversacion(null, null));
+    }
+
+    @Test
+    public void testGetConversacion2() {
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaPreferencias = new ArrayList();
+        ArrayList<String> listaRestricciones = new ArrayList();
+        ArrayList<Ingesta> listaAlimentos = new ArrayList();
+        String preferencia = "Probando preferencia";
+        listaPreferencias.add(preferencia);
+        Usuario usuario = new Usuario("Usuario", "Prueba", "14/08/92", null, "Uruguayo", listaPreferencias, listaRestricciones, listaAlimentos);
+        Profesional profesional = new Profesional("Profesional", "Prueba", "14/08/1992", null, "Estudiante", "16/06/2020", "Uruguay");
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+
+        InformacionMensaje info = new InformacionMensaje("Profesional Prueba", "Usuario Prueba", "El mensaje");
+        ArrayList<InformacionMensaje> listaInformacion = new ArrayList();
+        listaInformacion.add(info);
+        Conversacion conversacion = new Conversacion(usuario, profesional, listaInformacion);
+        ArrayList<Conversacion> unaListaConversaciones = new ArrayList();
+        unaListaConversaciones.add(conversacion);
+        sistemaATestear.setListaConversaciones(unaListaConversaciones);
+        String aux = sistemaATestear.getConversacion("Profesional Prueba", "Usuario Prueba");
+        assertEquals("\nProfesional Prueba\nEl mensaje\n", aux);
+    }
+
+    @Test
+    public void testGetConversacion3() {
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaPreferencias = new ArrayList();
+        ArrayList<String> listaRestricciones = new ArrayList();
+        ArrayList<Ingesta> listaAlimentos = new ArrayList();
+        String preferencia = "Probando preferencia";
+        listaPreferencias.add(preferencia);
+        Usuario usuario = new Usuario("Usuario", "Prueba", "14/08/92", null, "Uruguayo", listaPreferencias, listaRestricciones, listaAlimentos);
+        Profesional profesional = new Profesional("Profesional", "Prueba", "14/08/1992", null, "Estudiante", "16/06/2020", "Uruguay");
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+
+        InformacionMensaje info = new InformacionMensaje("Profesional Prueba", "Usuario Prueba", "El mensaje");
+        ArrayList<InformacionMensaje> listaInformacion = new ArrayList();
+        listaInformacion.add(info);
+        Conversacion conversacion = new Conversacion(usuario, profesional, listaInformacion);
+        ArrayList<Conversacion> unaListaConversaciones = new ArrayList();
+        unaListaConversaciones.add(conversacion);
+        sistemaATestear.setListaConversaciones(unaListaConversaciones);
+        String aux = sistemaATestear.getConversacion("Profesional2 Prueba", "Usuario Prueba");
+        assertEquals("No hay conversación disponible.", aux);
+    }
+
+    @Test
+    public void testGetConversacion4() {
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaPreferencias = new ArrayList();
+        ArrayList<String> listaRestricciones = new ArrayList();
+        ArrayList<Ingesta> listaAlimentos = new ArrayList();
+        String preferencia = "Probando preferencia";
+        listaPreferencias.add(preferencia);
+        Usuario usuario = new Usuario("Usuario", "Prueba", "14/08/92", null, "Uruguayo", listaPreferencias, listaRestricciones, listaAlimentos);
+        Profesional profesional = new Profesional("Profesional", "Prueba", "14/08/1992", null, "Estudiante", "16/06/2020", "Uruguay");
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+
+        InformacionMensaje info = new InformacionMensaje("Profesional Prueba", "Usuario Prueba", "El mensaje");
+        ArrayList<InformacionMensaje> listaInformacion = new ArrayList();
+        listaInformacion.add(info);
+        Conversacion conversacion = new Conversacion(usuario, profesional, listaInformacion);
+        ArrayList<Conversacion> unaListaConversaciones = new ArrayList();
+        unaListaConversaciones.add(conversacion);
+        sistemaATestear.setListaConversaciones(unaListaConversaciones);
+        String aux = sistemaATestear.getConversacion("Profesional Prueba", "Usuario2 Prueba");
+        assertEquals("No hay conversación disponible.", aux);
+    }
 }

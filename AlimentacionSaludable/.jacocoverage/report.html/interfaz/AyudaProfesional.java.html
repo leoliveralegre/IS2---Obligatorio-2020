@@ -60,7 +60,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
 <span class="nc" id="L60">        lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L61">        lblNombreUsuario.setText(&quot;Ayuda&quot;);</span>
 <span class="nc" id="L62">        jPanel1.add(lblNombreUsuario);</span>
-<span class="nc" id="L63">        lblNombreUsuario.setBounds(203, 27, 192, 78);</span>
+<span class="nc" id="L63">        lblNombreUsuario.setBounds(203, 27, 192, 70);</span>
 
 <span class="nc" id="L65">        btnIngresarAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L66">        btnIngresarAlimentoIngerido.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/icons8_Message_70px.png&quot;))); // NOI18N</span>
@@ -170,8 +170,9 @@ public class AyudaProfesional extends javax.swing.JDialog {
 <span class="nc" id="L170">    }//GEN-LAST:event_btnIngresarAlimentoIngerido2ActionPerformed</span>
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-<span class="nc" id="L173">        this.dispose();</span>
-<span class="nc" id="L174">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
+<span class="nc" id="L173">        this.sistema.guardarDatosSistema();</span>
+<span class="nc" id="L174">        System.exit(0);</span>
+<span class="nc" id="L175">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
